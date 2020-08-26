@@ -6,6 +6,9 @@
         <p class="fullname">
           Sayeed Wasif
         </p>
+        <p class="menu">
+          <img src="../../static/menu.svg" alt="">
+        </p>
       </div>
       <div class="middle">
         <p>Not</p>
@@ -60,6 +63,18 @@ export default {
       .fullname {
         text-shadow: 0 0 10px black;
         color: #4FFFEA;
+        display: inline-block;
+      }
+
+      .menu {
+        float: right;
+        padding: 16px 0;
+
+        img {
+          display: block;
+          height: 40px;
+          width: 40px;
+        }
       }
     }
 
