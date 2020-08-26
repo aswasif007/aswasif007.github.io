@@ -105,22 +105,23 @@ export default {
         }
 
         &:nth-child(1) {
+          animation-delay: 1s;
           opacity: 0;
         }
 
         &:nth-child(2) {
           opacity: 0;
-          animation-delay: 1s;
+          animation-delay: 2s;
         }
 
         &:nth-child(3) {
           opacity: 0;
-          animation-delay: 2s;
+          animation-delay: 3s;
         }
 
         &:nth-child(4) {
           opacity: 0;
-          animation-delay: 3s;
+          animation-delay: 4s;
           animation-fill-mode: forwards;
           animation-iteration-count: 1;
         }
@@ -141,7 +142,7 @@ export default {
         font-size: 30px;
         text-shadow: 0 0 10px black;
         display: inline-block;
-        animation: come-n-go 0.5s ease 4s 1 normal forwards;
+        animation: come-n-go 0.5s ease 5s 1 normal forwards;
       }
     }
   }
