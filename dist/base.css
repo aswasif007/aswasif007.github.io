@@ -2,14 +2,18 @@
   box-sizing: border-box;
 }
 
-body {
+body, p, div {
   margin: 0;
   padding: 0;
   display: block;
 }
 
-div {
-  margin: 0;
-  padding: 0;
-  display: block;
+@font-face {
+  font-family: 'Rakkas';
+  src: url('../static/Rakkas-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Quintessential';
+  src: url('../static/Quintessential-Regular.ttf');
 }
