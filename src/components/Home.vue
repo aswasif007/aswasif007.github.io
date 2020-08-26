@@ -8,12 +8,10 @@
         </p>
       </div>
       <div class="middle">
-        <div class="animation-panel">
-          <p>Not</p>
-          <p>Just</p>
-          <p>Another</p>
-          <p class="profession">Software Engineer</p>
-        </div>
+        <p>Not</p>
+        <p>Just</p>
+        <p>Another</p>
+        <p class="profession">Software Engineer</p>
       </div>
       <div class="bottom">
         <p class="tagline">
@@ -77,44 +75,39 @@ export default {
       font-family: 'Rakkas';
       text-align: center;
 
-      .animation-panel {
-        position: relative;
-        height: 150px;
+      p {
+        position: absolute;
+        width: 100%;
+        font-size: 80px;
+        font-family: 'Quintessential';
+        animation: come-n-go 0.5s ease 0s 2 alternate;
 
-        p {
-          position: absolute;
-          width: 100%;
-          font-size: 80px;
-          font-family: 'Quintessential';
-          animation: come-n-go 0.5s ease 0s 2 alternate;
+        &.profession {
+          font-size: 100px;
+          text-shadow: 0 0 30px black;
+          color: #FF4F8E;
+          font-family: 'Rakkas';
+        }
 
-          &.profession {
-            font-size: 100px;
-            text-shadow: 0 0 30px black;
-            color: #FF4F8E;
-            font-family: 'Rakkas';
-          }
+        &:nth-child(1) {
+          opacity: 0;
+        }
 
-          &:nth-child(1) {
-            opacity: 0;
-          }
+        &:nth-child(2) {
+          opacity: 0;
+          animation-delay: 1s;
+        }
 
-          &:nth-child(2) {
-            opacity: 0;
-            animation-delay: 1s;
-          }
+        &:nth-child(3) {
+          opacity: 0;
+          animation-delay: 2s;
+        }
 
-          &:nth-child(3) {
-            opacity: 0;
-            animation-delay: 2s;
-          }
-
-          &:nth-child(4) {
-            opacity: 0;
-            animation-delay: 3s;
-            animation-fill-mode: forwards;
-            animation-iteration-count: 1;
-          }
+        &:nth-child(4) {
+          opacity: 0;
+          animation-delay: 3s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
         }
       }
     }
