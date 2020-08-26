@@ -5,7 +5,7 @@
   "author": "Ahmed Sayeed Wasif",
   "private": true,
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "watchify": "watchify -vd -p [ browserify-hmr --hostname 0.0.0.0 ] -e src/main.js -o dist/build.js",
     "serve": "http-server -o -c 1 -a 0.0.0.0",
     "dev": "npm-run-all --parallel watchify serve",
     "lint": "eslint --ext .js,.vue src",
