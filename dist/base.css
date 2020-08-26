@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
