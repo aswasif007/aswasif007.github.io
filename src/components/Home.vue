@@ -95,7 +95,7 @@ export default {
         width: 100%;
         font-size: 80px;
         font-family: 'Quintessential';
-        animation: come-n-go 0.5s ease 0s 2 alternate;
+        animation: show-up 0.5s ease 0s 2 alternate;
 
         &.profession {
           font-size: 100px;
@@ -142,19 +142,9 @@ export default {
         font-size: 30px;
         text-shadow: 0 0 10px black;
         display: inline-block;
-        animation: come-n-go 0.5s ease 5s 1 normal forwards;
+        animation: show-up 0.5s ease 5s 1 normal forwards;
       }
     }
   }
-}
-
-@keyframes infinite-scroll {
-  0% { background-position-y: 0; }
-  100% { background-position-y: 100vh }
-}
-
-@keyframes come-n-go {
-  from { opacity: 0 }
-  to { opacity: 1; }
 }
 </style>
