@@ -61,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/_variables.scss";
+
 .pg-about {
   width: 100%;
   height: 100vh;
@@ -89,7 +91,7 @@ export default {
       line-height: 72px;
       margin: 20px 40px;
       text-shadow: 0 0 10px black;
-      color: #4FFFEA;
+      color: $extra-light-green;
 
       .fullname {
         display: inline-block;
@@ -135,7 +137,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: rgba($color: #342727, $alpha: 0.8);
+        background: rgba($color: $extra-dark-red, $alpha: 0.8);
 
         .sections {
           max-height: calc(100% - 200px);
@@ -151,19 +153,19 @@ export default {
           padding: 32px;
 
           .header {
-            color: #FF4F8E;
+            color: $pink;
           }
 
           .comment {
-            color: #645B5E;
+            color: $gray;
           }
 
           .info {
-            color: #AF5032;
+            color: $faded-red;
           }
 
           .element {
-            color: #D23604;
+            color: $light-red;
           }
         }
       }
@@ -192,12 +194,12 @@ export default {
             display: inline-block;
     
             span {
-              color: #FF4F8E;
+              color: $pink;
             }
 
             &.scroll-to-see {
               font-size: 20px;
-              color: #E290AE;
+              color: $light-red;
               opacity: 0;
               animation: show-up 0.5s ease;
               animation-delay: 4s;

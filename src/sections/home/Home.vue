@@ -32,6 +32,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/_variables.scss";
+
 .pg-home {
   width: 100%;
   height: 100vh;
@@ -62,7 +64,7 @@ export default {
 
       .fullname {
         text-shadow: 0 0 10px black;
-        color: #4FFFEA;
+        color: $extra-light-green;
         display: inline-block;
       }
 
@@ -100,7 +102,7 @@ export default {
         &.profession {
           font-size: 100px;
           text-shadow: 0 0 30px black;
-          color: #FF4F8E;
+          color: $pink;
           font-family: 'Rakkas';
         }
 
