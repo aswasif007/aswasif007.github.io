@@ -7,28 +7,9 @@
       <template v-slot:middle>
         <div class="skills">
           <div class="sections">
-            <p>
-              <span class="header">Experience {</span><br>
-              <span class="element">&nbsp;- NewsCred Inc. <span class="comment">/* 2017 - Present*/</span></span><br>
-              <span class="info">&nbsp;&nbsp; Fullstack Software Engineer</span><br>
-              <span class="header">}</span>
-            </p>
-            <p>
-              <span class="header">Skills {</span><br>
-              <span class="element">&nbsp;- C++, Python, Javascript</span><br>
-              <span class="element">&nbsp;- React, Vue, Express, Node, Electron</span><br>
-              <span class="element">&nbsp;- MySQL, MongoDB, ElasticSearch</span><br>
-              <span class="element">&nbsp;- AWS, Jenkins, Ansible</span><br>
-              <span class="element">&nbsp;- VSCode, Figma <span class="comment">/* Fav Tools ;) */</span></span><br>
-              <span class="element">&nbsp;- Linux, Git</span><br>
-              <span class="header">}</span>
-            </p>
-            <p>
-              <span class="header">Education {</span><br>
-              <span class="element">&nbsp;- Bangladesh University of Eng. & Tech.</span><br>
-              <span class="info">&nbsp;&nbsp; BSc in CSE <span class="comment">/* 2013-2017 */</span></span><br>
-              <span class="header">}</span>
-            </p>
+            <bio label="Experience" :entries="experience" />
+            <bio label="Skills" :entries="skills" />
+            <bio label="Education" :entries="education" />
           </div>
         </div>
         <div class="intro">
@@ -48,11 +29,35 @@
 <script>
 import NavBar from '@src/components/NavBar.vue';
 import SectionFramework from '@src/components/SectionFramework.vue';
+import Bio from './Bio.vue';
 
 export default {
   components: {
     NavBar,
     SectionFramework,
+    Bio,
+  },
+  computed: {
+    experience() {
+      return [
+        { title: 'NewsCred Inc.', titleComment: '2017 - Present', subtitle: 'Fullstack Software Engineer' },
+      ];
+    },
+    skills() {
+      return [
+        { title: 'C++, Python, Javascript' },
+        { title: 'React, Vue, Express, Node, Electron' },
+        { title: 'MySQL, MongoDB, ElasticSearch' },
+        { title: 'AWS, Jenkins, Ansible', titleComment: 'Fav Tools ;)' },
+        { title: 'VSCode, Figma' },
+        { title: 'Linux, Git' },
+      ];
+    },
+    education() {
+      return [
+        { title: 'Bangladesh University of Eng. & Tech.', subtitle: 'BSc in CSE', subtitleComment: '2013 - 2017' },
+      ];
+    }
   }
 }
 </script>
@@ -83,27 +88,6 @@ export default {
     animation: show-up 0.5s ease;
     animation-delay: 3s;
     animation-fill-mode: forwards;
-
-    p {
-      margin-left: 44px;
-      padding: 32px;
-
-      .header {
-        color: $pink;
-      }
-
-      .comment {
-        color: $gray;
-      }
-
-      .info {
-        color: $faded-red;
-      }
-
-      .element {
-        color: $light-red;
-      }
-    }
   }
 
   .intro {
@@ -142,7 +126,7 @@ export default {
 
   .scroll-to-see {
     font-size: $intro-subtitle-font;
-    color: $light-red;
+    color: $light-pink;
     opacity: 0;
     animation: show-up 0.5s ease;
     animation-delay: 4s;
