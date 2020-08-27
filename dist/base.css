@@ -46,13 +46,3 @@ body, p, div {
   font-family: 'Ubuntu Mono';
   src: url('../static/UbuntuMono-Regular.ttf');
 }
-
-@keyframes infinite-scroll {
-  0% { background-position-y: 0; }
-  100% { background-position-y: 100vh }
-}
-
-@keyframes show-up {
-  from { opacity: 0 }
-  to { opacity: 1; }
-}
