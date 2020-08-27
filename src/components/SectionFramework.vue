@@ -53,5 +53,12 @@ export default {
     height: 100%;
     display: flex;
   }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 32px;
+  }
 }
 </style>

@@ -5,12 +5,12 @@
         <nav-bar />
       </template>
       <template v-slot:middle>
-        <fragment>
-          <p class="slogan">Not</p>
-          <p class="slogan">Just</p>
-          <p class="slogan">Another</p>
-          <p class="slogan profession">Software Engineer</p>
-        </fragment>
+        <div class="slogan">
+          <p>Not</p>
+          <p>Just</p>
+          <p>Another</p>
+          <p class="profession">Software Engineer</p>
+        </div>
       </template>
       <template v-slot:bottom>
         <p class="tagline">
@@ -40,32 +40,41 @@ export default {
 
 .pg-home {
   .slogan {
-    position: absolute;
     width: 100%;
-    font-size: $home-slogan-font;
-    font-family: 'Quintessential';
-    animation: show-up 0.5s ease 0s 2 alternate;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 
-    &:nth-child(1) {
-      animation-delay: 1s;
-      opacity: 0;
-    }
+    p {
+      position: absolute;
+      width: 100%;
+      font-size: $home-slogan-font;
+      font-family: 'Quintessential';
+      animation: show-up 0.5s ease 0s 2 alternate;
 
-    &:nth-child(2) {
-      opacity: 0;
-      animation-delay: 2s;
-    }
+      &:nth-child(1) {
+        animation-delay: 1s;
+        opacity: 0;
+      }
 
-    &:nth-child(3) {
-      opacity: 0;
-      animation-delay: 3s;
-    }
+      &:nth-child(2) {
+        opacity: 0;
+        animation-delay: 2s;
+      }
 
-    &:nth-child(4) {
-      opacity: 0;
-      animation-delay: 4s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
+      &:nth-child(3) {
+        opacity: 0;
+        animation-delay: 3s;
+      }
+
+      &:nth-child(4) {
+        opacity: 0;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+      }
     }
   }
 
@@ -73,15 +82,16 @@ export default {
     font-size: $home-profession-font;
     text-shadow: 0 0 30px black;
     color: $pink;
-    font-family: 'Rakkas';
+    font-family: 'Rakkas' !important;
   }
 
   .tagline {
     opacity: 0;
     font-size: $home-tagline-font;
     text-shadow: 0 0 10px black;
-    display: inline-block;
+    display: block;
     animation: show-up 0.5s ease 5s 1 normal forwards;
+    text-align: center;
   }
 }
 </style>
