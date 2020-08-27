@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <about></about>
+    <home />
+    <about />
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import About from '@src/sections/about/About.vue'
 export default {
   name: 'app',
   components: {
+    Home,
     About
   }
 }
