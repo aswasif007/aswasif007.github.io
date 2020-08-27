@@ -1,9 +1,10 @@
 <template>
   <div class="pg-about">
-    <div class="dark-layer"></div>
-    <div class="content">
-      <nav-bar label="About me" />
-      <div class="middle">
+    <section-framework>
+      <template v-slot:top>
+        <nav-bar label="About me" />
+      </template>
+      <template v-slot:middle>
         <div class="skills">
           <div class="sections">
             <p>
@@ -39,17 +40,19 @@
             <p class="scroll-to-see">Scroll to see some of my works!</p>
           </div>
         </div>
-      </div>
-    </div>
+      </template>
+    </section-framework>
   </div>
 </template>
 
 <script>
 import NavBar from '@src/components/NavBar.vue';
+import SectionFramework from '@src/components/SectionFramework.vue';
 
 export default {
   components: {
     NavBar,
+    SectionFramework,
   }
 }
 </script>
@@ -58,123 +61,92 @@ export default {
 @import "src/_variables.scss";
 
 .pg-about {
-  width: 100%;
-  height: 100vh;
-  background-image: url('../../static/background.webp');
-  background-size: 100% auto;
-  animation: infinite-scroll 240s linear 0s infinite alternate-reverse;
-
-  .dark-layer {
-    background: black;
-    width: 100%;
+  .skills {
+    width: 0%;
     height: 100%;
-    opacity: 0.4;
-    position: absolute;
+    animation: grow-width 1s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    text-align: left;
+    font-size: $bio-font;
+    font-family: 'Ubuntu Mono';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba($color: $extra-dark-red, $alpha: 0.8);
   }
 
-  .content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    color: white;
-    z-index: 1;
+  .sections {
+    max-height: calc(100% - 200px);
+    overflow: auto;
+    opacity: 0;
+    animation: show-up 0.5s ease;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
 
-    .middle {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
+    p {
+      margin-left: 44px;
+      padding: 32px;
 
-      .skills {
-        width: 0%;
-        height: 100%;
-        animation: grow-width 1s ease;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
-        text-align: left;
-        font-size: $bio-font;
-        font-family: 'Ubuntu Mono';
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: rgba($color: $extra-dark-red, $alpha: 0.8);
-
-        .sections {
-          max-height: calc(100% - 200px);
-          overflow: auto;
-          opacity: 0;
-          animation: show-up 0.5s ease;
-          animation-delay: 3s;
-          animation-fill-mode: forwards;
-        }
-
-        p {
-          margin-left: 44px;
-          padding: 32px;
-
-          .header {
-            color: $pink;
-          }
-
-          .comment {
-            color: $gray;
-          }
-
-          .info {
-            color: $faded-red;
-          }
-
-          .element {
-            color: $light-red;
-          }
-        }
+      .header {
+        color: $pink;
       }
 
-      .intro {
-        position: relative;
-        text-align: center;
-        font-size: $intro-font-big;
-        width: 100%;
-        height: 100%;
-        animation: shrink-width 1s ease;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      .comment {
+        color: $gray;
+      }
 
-        .intro-message {
-          opacity: 0;
-          display: inline-block;
-          text-align: center;
-          margin: 0 20px;
+      .info {
+        color: $faded-red;
+      }
 
-          p {
-            font-family: 'PT Serif';
-            display: inline-block;
-    
-            span {
-              color: $pink;
-            }
-
-            &.scroll-to-see {
-              font-size: $intro-subtitle-font;
-              color: $light-red;
-              opacity: 0;
-              animation: show-up 0.5s ease;
-              animation-delay: 4s;
-              animation-fill-mode: forwards;
-            }
-          }
-
-          animation: show-up 1s ease;
-          animation-delay: 0.5s;
-          animation-fill-mode: forwards;
-        }
+      .element {
+        color: $light-red;
       }
     }
+  }
+
+  .intro {
+    position: relative;
+    text-align: center;
+    font-size: $intro-font-big;
+    width: 100%;
+    height: 100%;
+    animation: shrink-width 1s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .intro-message {
+    opacity: 0;
+    display: inline-block;
+    text-align: center;
+    margin: 0 20px;
+
+    p {
+      font-family: 'PT Serif';
+      display: inline-block;
+
+      span {
+        color: $pink;
+      }
+    }
+
+    animation: show-up 1s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .scroll-to-see {
+    font-size: $intro-subtitle-font;
+    color: $light-red;
+    opacity: 0;
+    animation: show-up 0.5s ease;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -194,5 +166,4 @@ export default {
     font-size: $intro-font-small;
   }
 }
-
 </style>
