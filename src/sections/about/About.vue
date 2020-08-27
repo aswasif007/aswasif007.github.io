@@ -2,17 +2,7 @@
   <div class="pg-about">
     <div class="dark-layer"></div>
     <div class="content">
-      <div class="top">
-        <p class="fullname">
-          Sayeed Wasif
-        </p>
-        <p class="menu">
-          <span>About me</span>
-          <span class="menu-icon">
-            <img src="../../static/menu.svg" alt="">
-          </span>
-        </p>
-      </div>
+      <nav-bar label="About me" />
       <div class="middle">
         <div class="skills">
           <div class="sections">
@@ -55,8 +45,12 @@
 </template>
 
 <script>
-export default {
+import NavBar from '@src/components/NavBar.vue';
 
+export default {
+  components: {
+    NavBar,
+  }
 }
 </script>
 
@@ -84,38 +78,6 @@ export default {
     position: absolute;
     color: white;
     z-index: 1;
-
-    .top {
-      font-size: $topbar-font;
-      font-family: 'Rakkas';
-      line-height: 72px;
-      margin: 20px 40px;
-      text-shadow: 0 0 10px black;
-      color: $extra-light-green;
-
-      .fullname {
-        display: inline-block;
-      }
-
-      .menu {
-        float: right;
-
-        span {
-          display: inline-block;
-        }
-
-        .menu-icon {
-          margin-bottom: -6px;
-          margin-left: 16px;
-
-          img {
-            display: block;
-            height: 40px;
-            width: 40px;
-          }
-        }
-      }
-    }
 
     .middle {
       position: absolute;

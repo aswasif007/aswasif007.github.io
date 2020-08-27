@@ -2,14 +2,7 @@
   <div class="pg-home">
     <div class="dark-layer"></div>
     <div class="content">
-      <div class="top">
-        <p class="fullname">
-          Sayeed Wasif
-        </p>
-        <p class="menu">
-          <img src="../../static/menu.svg" alt="">
-        </p>
-      </div>
+      <nav-bar />
       <div class="middle">
         <p>Not</p>
         <p>Just</p>
@@ -26,8 +19,12 @@
 </template>
 
 <script>
-export default {
+import NavBar from '@src/components/NavBar.vue';
 
+export default {
+  components: {
+    NavBar,
+  }
 }
 </script>
 
@@ -55,30 +52,6 @@ export default {
     position: absolute;
     color: white;
     z-index: 1;
-
-    .top {
-      font-size: $topbar-font;
-      font-family: 'Rakkas';
-      line-height: 72px;
-      margin: 20px 40px;
-
-      .fullname {
-        text-shadow: 0 0 10px black;
-        color: $extra-light-green;
-        display: inline-block;
-      }
-
-      .menu {
-        float: right;
-        padding: 16px 0;
-
-        img {
-          display: block;
-          height: 40px;
-          width: 40px;
-        }
-      }
-    }
 
     .middle {
       position: absolute;
