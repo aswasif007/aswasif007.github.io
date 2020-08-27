@@ -86,7 +86,7 @@ export default {
     z-index: 1;
 
     .top {
-      font-size: 48px;
+      font-size: $topbar-font;
       font-family: 'Rakkas';
       line-height: 72px;
       margin: 20px 40px;
@@ -132,7 +132,7 @@ export default {
         animation-delay: 2s;
         animation-fill-mode: forwards;
         text-align: left;
-        font-size: 28px;
+        font-size: $bio-font;
         font-family: 'Ubuntu Mono';
         display: flex;
         flex-direction: column;
@@ -173,7 +173,7 @@ export default {
       .intro {
         position: relative;
         text-align: center;
-        font-size: 54px;
+        font-size: $intro-font-big;
         width: 100%;
         height: 100%;
         animation: shrink-width 1s ease;
@@ -198,7 +198,7 @@ export default {
             }
 
             &.scroll-to-see {
-              font-size: 20px;
+              font-size: $intro-subtitle-font;
               color: $light-red;
               opacity: 0;
               animation: show-up 0.5s ease;
@@ -224,12 +224,12 @@ export default {
 @keyframes shrink-width {
   from {
     width: 100%;
-    font-size: 54px;
+    font-size: $intro-font-big;
   }
 
   to {
     width: 50%;
-    font-size: 36px;
+    font-size: $intro-font-small;
   }
 }
 

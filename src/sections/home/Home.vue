@@ -57,7 +57,7 @@ export default {
     z-index: 1;
 
     .top {
-      font-size: 48px;
+      font-size: $topbar-font;
       font-family: 'Rakkas';
       line-height: 72px;
       margin: 20px 40px;
@@ -95,12 +95,12 @@ export default {
       p {
         position: absolute;
         width: 100%;
-        font-size: 80px;
+        font-size: $home-slogan-font;
         font-family: 'Quintessential';
         animation: show-up 0.5s ease 0s 2 alternate;
 
         &.profession {
-          font-size: 100px;
+          font-size: $home-profession-font;
           text-shadow: 0 0 30px black;
           color: $pink;
           font-family: 'Rakkas';
@@ -141,7 +141,7 @@ export default {
 
       .tagline {
         opacity: 0;
-        font-size: 30px;
+        font-size: $home-tagline-font;
         text-shadow: 0 0 10px black;
         display: inline-block;
         animation: show-up 0.5s ease 5s 1 normal forwards;
