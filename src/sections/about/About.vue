@@ -6,7 +6,7 @@
       </template>
       <template v-slot:middle>
         <div class="skills">
-          <div class="sections">
+          <div class="sections" @wheel.stop>
             <bio label="Experience" :entries="experience" />
             <bio label="Skills" :entries="skills" />
             <bio label="Education" :entries="education" />
