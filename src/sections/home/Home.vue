@@ -97,7 +97,7 @@ export default {
       }
 
       &:nth-child(4) {
-        animation-delay: 2.5s;
+        animation-delay: 3.5s;
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
       }
