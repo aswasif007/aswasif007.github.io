@@ -1,5 +1,5 @@
 <template>
-  <div class="pg-about">
+  <div class="pg-about" :class="{ animate }">
     <section-framework>
       <template v-slot:top>
         <nav-bar label="About me" />
@@ -37,6 +37,9 @@ export default {
     SectionFramework,
     Bio,
   },
+  props: {
+    animate: { type: Boolean, default: false },
+  },
   computed: {
     experience() {
       return [
@@ -66,12 +69,11 @@ export default {
 @import "src/_variables.scss";
 
 .pg-about {
+  position: relative;
+
   .skills {
     width: 0%;
     height: 100%;
-    animation: grow-width 1s ease;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
     text-align: left;
     font-size: $bio-font;
     font-family: 'Ubuntu Mono';
@@ -85,9 +87,6 @@ export default {
     max-height: calc(100% - 200px);
     overflow: auto;
     opacity: 0;
-    animation: show-up 0.5s ease;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
   }
 
   .intro {
@@ -96,9 +95,6 @@ export default {
     font-size: $intro-font-big;
     width: 100%;
     height: 100%;
-    animation: shrink-width 1s ease;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,22 +114,46 @@ export default {
         color: $pink;
       }
     }
-
-    animation: show-up 1s ease;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
   }
 
   .scroll-to-see {
     font-size: $intro-subtitle-font;
     color: $light-pink;
     opacity: 0;
+  }
+}
+
+.animate {
+  .skills {
+    animation: grow-width 1s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .sections {
+    animation: show-up 0.5s ease;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  .intro {
+    animation: shrink-width 1s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .intro-message {
+    animation: show-up 1s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .scroll-to-see {
     animation: show-up 0.5s ease;
     animation-delay: 4s;
     animation-fill-mode: forwards;
   }
 }
-
 @keyframes grow-width {
   from { width: 0%; }
   to { width: 50%; }

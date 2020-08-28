@@ -1,24 +1,29 @@
 <template>
   <div id="app">
-    <home />
-    <about />
+    <container />
   </div>
 </template>
 
 <script>
-import Home from '@src/sections/home/Home.vue'
-import About from '@src/sections/about/About.vue'
+import Container from '@src/components/Container.vue'
 
 export default {
   name: 'app',
   components: {
-    Home,
-    About
+    Container,
   }
 }
 </script>
 
 <style lang="scss">
+
+#app {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -39,6 +39,8 @@ export default {
 @import "src/_variables.scss";
 
 .pg-home {
+  position: relative;
+
   .slogan {
     width: 100%;
     height: 100%;
