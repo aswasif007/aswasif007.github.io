@@ -1,5 +1,5 @@
 <template>
-  <div class="pg-home">
+  <div class="pg-home" :class="{ animate }">
     <section-framework>
       <template v-slot:top>
         <nav-bar />
@@ -27,6 +27,9 @@ import SectionFramework from '@src/components/SectionFramework.vue';
 import Fragment from '@src/components/Fragment';
 
 export default {
+  props: {
+    animate: { type: Boolean, default: false },
+  },
   components: {
     NavBar,
     SectionFramework,
@@ -54,29 +57,7 @@ export default {
       width: 100%;
       font-size: $home-slogan-font;
       font-family: 'Quintessential';
-      animation: show-up 0.5s ease 0s 2 alternate;
-
-      &:nth-child(1) {
-        animation-delay: 1s;
-        opacity: 0;
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-        animation-delay: 2s;
-      }
-
-      &:nth-child(3) {
-        opacity: 0;
-        animation-delay: 3s;
-      }
-
-      &:nth-child(4) {
-        opacity: 0;
-        animation-delay: 4s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: 1;
-      }
+      opacity: 0;
     }
   }
 
@@ -92,8 +73,41 @@ export default {
     font-size: $home-tagline-font;
     text-shadow: 0 0 10px black;
     display: block;
-    animation: show-up 0.5s ease 5s 1 normal forwards;
     text-align: center;
+  }
+}
+
+.animate {
+  .slogan {
+    p {
+      animation: show-up 0.5s ease;
+      animation-direction: alternate;
+      animation-iteration-count: 2;
+
+      &:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 2.5s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 2.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  .tagline {
+    animation: show-up 0.5s ease;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
   }
 }
 </style>

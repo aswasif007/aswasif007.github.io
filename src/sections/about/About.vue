@@ -154,6 +154,7 @@ export default {
     animation-fill-mode: forwards;
   }
 }
+
 @keyframes grow-width {
   from { width: 0%; }
   to { width: 50%; }
