@@ -80,7 +80,7 @@ export default {
 .animate {
   .slogan {
     p {
-      animation: show-up 0.5s ease;
+      animation: show-up 0.3s ease;
       animation-direction: alternate;
       animation-iteration-count: 2;
 
@@ -89,15 +89,15 @@ export default {
       }
 
       &:nth-child(2) {
-        animation-delay: 1.5s;
+        animation-delay: 1.1s;
       }
 
       &:nth-child(3) {
-        animation-delay: 2.5s;
+        animation-delay: 1.7s;
       }
 
       &:nth-child(4) {
-        animation-delay: 3.5s;
+        animation-delay: 2.3s;
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
       }
@@ -106,7 +106,7 @@ export default {
 
   .tagline {
     animation: show-up 0.5s ease;
-    animation-delay: 4.5s;
+    animation-delay: 3.3s;
     animation-fill-mode: forwards;
   }
 }
