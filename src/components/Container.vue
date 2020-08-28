@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="page" @wheel.prevent="onWheel">
+  <div class="container" :class="page" @wheel.prevent="onWheelDebounced">
     <home :animate="animate.home" />
     <about :animate="animate.about" />
   </div>
@@ -8,12 +8,14 @@
 <script>
 import Home from '~src/sections/home/Home.vue';
 import About from '~src/sections/about/About.vue';
+import _ from 'lodash';
 
 const pages = ['home', 'about'];
 
 export default {
   mounted() {
     window.addEventListener('keyup', this.onKeyPress);
+    this.onWheelDebounced = _.debounce(this.onWheel, 100, { leading: true, trailing: false });
   },
   data() {
     return {
