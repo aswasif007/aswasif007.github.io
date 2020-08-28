@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <home />
-    <about />
+  <div class="container" :class="page" @wheel.prevent="onWheel">
+    <home :animate="animate.home" />
+    <about :animate="animate.about" />
   </div>
 </template>
 
@@ -9,7 +9,41 @@
 import Home from '@src/sections/home/Home.vue';
 import About from '@src/sections/about/About.vue';
 
+const pages = ['home', 'about'];
+
 export default {
+  data() {
+    return {
+      pageIdx: 0,
+      animate: { home: true },
+    };
+  },
+  methods: {
+    onWheel(e) {
+      if (e.deltaY < 0) { this.onScrollUp(); }
+      if (e.deltaY > 0) { this.onScrollDown(); }
+    },
+    onScrollDown(e) {
+      if (this.pageIdx < pages.length - 1) {
+        this.pageIdx += 1;
+        this.setAnimation();
+      }
+    },
+    onScrollUp(e) {
+      if (this.pageIdx > 0) {
+        this.pageIdx -= 1;
+        this.setAnimation();
+      }
+    },
+    setAnimation() {
+      this.animate[this.page] = true;
+    }
+  },
+  computed: {
+    page() {
+      return pages[this.pageIdx];
+    },
+  },
   components: {
     Home,
     About,
@@ -23,5 +57,14 @@ export default {
   position: absolute;
   overflow: hidden;
   top: 0;
+  transition: top .7s ease-in-out;
+
+  &.home {
+    top: 0;
+  }
+
+  &.about {
+    top: -100vh;
+  }
 }
 </style>
