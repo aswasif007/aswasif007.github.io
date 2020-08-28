@@ -5,20 +5,22 @@
         <nav-bar label="About me" />
       </template>
       <template v-slot:middle>
-        <div class="skills">
-          <div class="sections" @wheel.stop>
-            <bio label="Experience" :entries="experience" />
-            <bio label="Skills" :entries="skills" />
-            <bio label="Education" :entries="education" />
+        <div class="body">
+          <div class="skills">
+            <div class="sections" @wheel.stop>
+              <bio label="Experience" :entries="experience" />
+              <bio label="Skills" :entries="skills" />
+              <bio label="Education" :entries="education" />
+            </div>
           </div>
-        </div>
-        <div class="intro">
-          <div class="intro-message">
-            <p>Hi</p><br>
-            <p>I am <span>Wasif</span></p><br>
-            <p>A full-time geek</p><br>
-            <p>And part-time developer</p><br>
-            <p class="scroll-to-see">Scroll to see some of my works!</p>
+          <div class="intro">
+            <div class="intro-message">
+              <p>Hi</p><br>
+              <p>I am <span>Wasif</span></p><br>
+              <p>A full-time geek</p><br>
+              <p>And part-time developer</p><br>
+              <p class="scroll-to-see">Scroll to see some of my works!</p>
+            </div>
           </div>
         </div>
       </template>
@@ -70,6 +72,12 @@ export default {
 
 .pg-about {
   position: relative;
+
+  .body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
 
   .skills {
     width: 0%;
