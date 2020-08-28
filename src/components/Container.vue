@@ -2,15 +2,17 @@
   <div class="container" :class="page" @wheel.prevent="onWheelDebounced">
     <home :animate="animate.home" />
     <about :animate="animate.about" />
+    <portfolio :animate="animate.portfolio" />
   </div>
 </template>
 
 <script>
 import Home from '~src/sections/home/Home.vue';
 import About from '~src/sections/about/About.vue';
+import Portfolio from '~src/sections/portfolio/Portfolio.vue';
 import _ from 'lodash';
 
-const pages = ['home', 'about'];
+const pages = ['home', 'about', 'portfolio'];
 
 export default {
   mounted() {
@@ -56,6 +58,7 @@ export default {
   components: {
     Home,
     About,
+    Portfolio,
   }
 }
 </script>
@@ -74,6 +77,10 @@ export default {
 
   &.about {
     top: -100vh;
+  }
+
+  &.portfolio {
+    top: -200vh;
   }
 }
 </style>
