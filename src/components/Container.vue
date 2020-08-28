@@ -3,6 +3,7 @@
     <home :animate="animate.home" />
     <about :animate="animate.about" />
     <portfolio :animate="animate.portfolio" />
+    <blogs :animate="animate.blogs" />
   </div>
 </template>
 
@@ -10,9 +11,10 @@
 import Home from '~src/sections/home/Home.vue';
 import About from '~src/sections/about/About.vue';
 import Portfolio from '~src/sections/portfolio/Portfolio.vue';
+import Blogs from '~src/sections/blogs/Blogs.vue';
 import _ from 'lodash';
 
-const pages = ['home', 'about', 'portfolio'];
+const pages = ['home', 'about', 'portfolio', 'blogs'];
 
 export default {
   mounted() {
@@ -59,6 +61,7 @@ export default {
     Home,
     About,
     Portfolio,
+    Blogs,
   }
 }
 </script>
@@ -81,6 +84,10 @@ export default {
 
   &.portfolio {
     top: -200vh;
+  }
+
+  &.blogs {
+    top: -300vh;
   }
 }
 </style>
