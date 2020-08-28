@@ -52,7 +52,7 @@
     "watchify": "^3.4.0"
   },
   "_moduleAliases": {
-    "@static": "./static",
-    "@src": "./src"
+    "~static": "./static",
+    "~src": "./src"
   }
 }

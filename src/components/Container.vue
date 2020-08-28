@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Home from '@src/sections/home/Home.vue';
-import About from '@src/sections/about/About.vue';
+import Home from '~src/sections/home/Home.vue';
+import About from '~src/sections/about/About.vue';
 
 const pages = ['home', 'about'];
 

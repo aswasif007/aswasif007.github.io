@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import NavBar from '@src/components/NavBar.vue';
-import SectionFramework from '@src/components/SectionFramework.vue';
+import NavBar from '~src/components/NavBar.vue';
+import SectionFramework from '~src/components/SectionFramework.vue';
 import Bio from './Bio.vue';
 
 export default {

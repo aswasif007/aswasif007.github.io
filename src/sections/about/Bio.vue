@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Fragment from '@src/components/Fragment';
+import Fragment from '~src/components/Fragment';
 
 export default {
   props: {

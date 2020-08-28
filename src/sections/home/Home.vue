@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import NavBar from '@src/components/NavBar.vue';
-import SectionFramework from '@src/components/SectionFramework.vue';
-import Fragment from '@src/components/Fragment';
+import NavBar from '~src/components/NavBar.vue';
+import SectionFramework from '~src/components/SectionFramework.vue';
+import Fragment from '~src/components/Fragment';
 
 export default {
   props: {
