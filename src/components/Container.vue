@@ -12,6 +12,9 @@ import About from '@src/sections/about/About.vue';
 const pages = ['home', 'about'];
 
 export default {
+  mounted() {
+    window.addEventListener('keyup', this.onKeyPress);
+  },
   data() {
     return {
       pageIdx: 0,
@@ -23,13 +26,17 @@ export default {
       if (e.deltaY < 0) { this.onScrollUp(); }
       if (e.deltaY > 0) { this.onScrollDown(); }
     },
-    onScrollDown(e) {
+    onKeyPress(e) {
+      if (e.key === 'ArrowUp') { this.onScrollUp(); }
+      if (e.key === 'ArrowDown') { this.onScrollDown(); }
+    },
+    onScrollDown() {
       if (this.pageIdx < pages.length - 1) {
         this.pageIdx += 1;
         this.setAnimation();
       }
     },
-    onScrollUp(e) {
+    onScrollUp() {
       if (this.pageIdx > 0) {
         this.pageIdx -= 1;
         this.setAnimation();
