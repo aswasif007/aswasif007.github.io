@@ -5,11 +5,9 @@
         <nav-bar />
       </template>
       <template v-slot:middle>
-        <div class="slogan">
-          <p>Not</p>
-          <p>Just</p>
-          <p>Another</p>
+        <div class="body">
           <p class="profession">Software Engineer</p>
+          <p class="subtitle">And beyond!</p>
         </div>
       </template>
       <template v-slot:bottom>
@@ -44,7 +42,7 @@ export default {
 .pg-home {
   position: relative;
 
-  .slogan {
+  .body {
     width: 100%;
     height: 100%;
     display: flex;
@@ -53,19 +51,22 @@ export default {
     text-align: center;
 
     p {
-      position: absolute;
       width: 100%;
-      font-size: $home-slogan-font;
-      font-family: 'Quintessential';
       opacity: 0;
     }
+  }
+
+  .subtitle {
+    font-size: $home-tagline-font;
+    font-family: 'Quintessential';
   }
 
   .profession {
     font-size: $home-profession-font;
     text-shadow: 0 0 30px black;
     color: $pink;
-    font-family: 'Rakkas' !important;
+    font-family: 'Rakkas';
+    line-height: 120%;
   }
 
   .tagline {
@@ -78,35 +79,25 @@ export default {
 }
 
 .animate {
-  .slogan {
+  .body {
     p {
-      animation: show-up 0.3s ease;
-      animation-direction: alternate;
-      animation-iteration-count: 2;
+      animation: show-up 0.5s ease;
+      animation-fill-mode: forwards;
 
       &:nth-child(1) {
         animation-delay: 0.5s;
       }
 
       &:nth-child(2) {
-        animation-delay: 1.1s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 1.7s;
-      }
-
-      &:nth-child(4) {
-        animation-delay: 2.3s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: 1;
+        animation-delay: 1s;
+        animation-duration: 1s;
       }
     }
   }
 
   .tagline {
     animation: show-up 0.5s ease;
-    animation-delay: 3.3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
   }
 }

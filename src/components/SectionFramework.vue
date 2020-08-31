@@ -62,6 +62,7 @@ export default {
     bottom: 0;
     width: 100%;
     padding: 32px;
+    font-family: 'Rakkas';
   }
 }
 </style>
