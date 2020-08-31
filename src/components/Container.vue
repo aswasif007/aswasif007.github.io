@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="page" @wheel.prevent="onWheelDebounced">
+  <div class="container" @wheel.prevent="onWheelDebounced">
     <div class="polygon3d" :style="polygonStyle">
       <div class="face face_1">
         <home :animate="animate.home" />
@@ -14,7 +14,7 @@
         <blogs :animate="animate.blogs" />
       </div>
       <div class="face face_5">
-        Contacts
+        <contact :animate="animate.contact" />
       </div>
     </div>
   </div>
@@ -25,6 +25,7 @@ import Home from '~src/sections/home/Home.vue';
 import About from '~src/sections/about/About.vue';
 import Portfolio from '~src/sections/portfolio/Portfolio.vue';
 import Blogs from '~src/sections/blogs/Blogs.vue';
+import Contact from '~src/sections/contact/Contact.vue';
 import _ from 'lodash';
 
 const pages = ['home', 'about', 'portfolio', 'blogs', 'contact'];
@@ -64,8 +65,8 @@ export default {
   computed: {
     page() {
       let idx = Math.abs(this.scrollCount) % pages.length;
-      if (idx < 0) {
-        idx = idx + pages.length;
+      if (this.scrollCount < 0) {
+        idx = pages.length - idx;
       }
       return pages[idx];
     },
@@ -80,6 +81,7 @@ export default {
     About,
     Portfolio,
     Blogs,
+    Contact,
   }
 }
 </script>
@@ -124,7 +126,6 @@ export default {
 }
 
 .face_5 {
-  background: #f93;
   transform: rotateX(-288deg) translateZ(68.8vh);
 }
 </style>
