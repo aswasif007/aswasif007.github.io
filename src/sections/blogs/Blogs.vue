@@ -47,6 +47,8 @@ export default {
   .thumbnails {
     display: flex;
     justify-content: center;
+    font-size: 17px;
+    font-family: 'PT Serif';
 
     p {
       transform: scale(0);
