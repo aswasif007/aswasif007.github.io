@@ -89,7 +89,7 @@ export default {
       }
 
       &:nth-child(2) {
-        animation-delay: 1s;
+        animation-delay: 1.5s;
         animation-duration: 1s;
       }
     }
@@ -97,7 +97,7 @@ export default {
 
   .tagline {
     animation: show-up 0.5s ease;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
   }
 }
