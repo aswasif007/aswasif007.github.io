@@ -22,6 +22,7 @@ export default {
   width: 100%;
   position: absolute;
   overflow: hidden;
+  background-color: #433;
 }
 
 * {

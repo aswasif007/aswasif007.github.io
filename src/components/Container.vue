@@ -1,9 +1,22 @@
 <template>
   <div class="container" :class="page" @wheel.prevent="onWheelDebounced">
-    <home :animate="animate.home" />
-    <about :animate="animate.about" />
-    <portfolio :animate="animate.portfolio" />
-    <blogs :animate="animate.blogs" />
+    <div class="polygon3d" :style="polygonStyle">
+      <div class="face face_1">
+        <home :animate="animate.home" />
+      </div>
+      <div class="face face_2">
+        <about :animate="animate.about" />
+      </div>
+      <div class="face face_3">
+        <portfolio :animate="animate.portfolio" />
+      </div>
+      <div class="face face_4">
+        <blogs :animate="animate.blogs" />
+      </div>
+      <div class="face face_5">
+        Contacts
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,7 +27,7 @@ import Portfolio from '~src/sections/portfolio/Portfolio.vue';
 import Blogs from '~src/sections/blogs/Blogs.vue';
 import _ from 'lodash';
 
-const pages = ['home', 'about', 'portfolio', 'blogs'];
+const pages = ['home', 'about', 'portfolio', 'blogs', 'contact'];
 
 export default {
   mounted() {
@@ -23,7 +36,7 @@ export default {
   },
   data() {
     return {
-      pageIdx: 0,
+      scrollCount: 0,
       animate: { home: true },
     };
   },
@@ -37,16 +50,12 @@ export default {
       if (e.key === 'ArrowDown') { this.onScrollDown(); }
     },
     onScrollDown() {
-      if (this.pageIdx < pages.length - 1) {
-        this.pageIdx += 1;
-        this.setAnimation();
-      }
+      this.scrollCount += 1;
+      this.setAnimation();
     },
     onScrollUp() {
-      if (this.pageIdx > 0) {
-        this.pageIdx -= 1;
-        this.setAnimation();
-      }
+      this.scrollCount -= 1;
+      this.setAnimation();
     },
     setAnimation() {
       this.animate[this.page] = true;
@@ -54,8 +63,17 @@ export default {
   },
   computed: {
     page() {
-      return pages[this.pageIdx];
+      let idx = Math.abs(this.scrollCount) % pages.length;
+      if (idx < 0) {
+        idx = idx + pages.length;
+      }
+      return pages[idx];
     },
+    polygonStyle() {
+      return {
+        transform: `translateZ(-68.8vh) rotateX(${this.scrollCount * 72}deg)`
+      };
+    }
   },
   components: {
     Home,
@@ -69,25 +87,44 @@ export default {
 <style lang="scss" scoped>
 .container {
   width: 100%;
+  height: 100vh;
+  perspective: 300vh;
+}
+
+.polygon3d {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(-68.8vh);
+  transition: transform 1s ease-in-out;
+}
+
+.face {
   position: absolute;
-  overflow: hidden;
-  top: 0;
-  transition: top .7s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  font-size: 40px;
+}
 
-  &.home {
-    top: 0;
-  }
+.face_1 {
+  transform: rotateX(0deg) translateZ(68.8vh);
+}
 
-  &.about {
-    top: -100vh;
-  }
+.face_2 {
+  transform: rotateX(-72deg) translateZ(68.8vh);
+}
 
-  &.portfolio {
-    top: -200vh;
-  }
+.face_3 {
+  transform: rotateX(-144deg) translateZ(68.8vh);
+}
 
-  &.blogs {
-    top: -300vh;
-  }
+.face_4 {
+  transform: rotateX(-216deg) translateZ(68.8vh);
+}
+
+.face_5 {
+  background: #f93;
+  transform: rotateX(-288deg) translateZ(68.8vh);
 }
 </style>
