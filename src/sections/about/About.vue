@@ -81,7 +81,7 @@ export default {
 
   .skills {
     width: 0%;
-    height: 100%;
+    height: calc(100% - 2px);
     text-align: left;
     font-size: $bio-font;
     font-family: 'Ubuntu Mono';

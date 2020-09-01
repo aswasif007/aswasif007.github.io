@@ -26,9 +26,10 @@ export default {
 .section-framework {
   width: 100%;
   height: 100vh;
-  background: rgba($ash, 0.9);
+  background: rgba($ash, 0.95);
   background-size: 100% auto;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 2px 2px 0px rgba($color: #000000, $alpha: 0.5);
+  border: 1px solid #374456;
 
   .content {
     width: 100%;
