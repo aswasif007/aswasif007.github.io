@@ -54,6 +54,7 @@ export default {
     justify-content: center;
     font-size: 17px;
     font-family: 'PT Serif';
+    text-shadow: none;
 
     a {
       transform: scale(0);

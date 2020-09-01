@@ -63,7 +63,6 @@ export default {
 
   .profession {
     font-size: $home-profession-font;
-    text-shadow: 0 0 30px black;
     color: $pink;
     font-family: 'Rakkas';
     line-height: 120%;
@@ -72,7 +71,6 @@ export default {
   .tagline {
     opacity: 0;
     font-size: $home-tagline-font;
-    text-shadow: 0 0 10px black;
     display: block;
     text-align: center;
   }

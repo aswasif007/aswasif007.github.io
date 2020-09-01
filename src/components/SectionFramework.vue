@@ -1,6 +1,5 @@
 <template>
   <div class="section-framework">
-    <div class="dark-layer"></div>
     <div class="content">
       <div class="top">
         <slot name="top"></slot>
@@ -22,27 +21,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'src/_variables.scss';
+
 .section-framework {
   width: 100%;
   height: 100vh;
-  background-image: url('../static/background.webp');
+  background: rgba($ash, 0.9);
   background-size: 100% auto;
-  animation: infinite-scroll 240s linear 0s infinite alternate-reverse;
-
-  .dark-layer {
-    background: black;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    position: absolute;
-  }
+  text-shadow: 2px 2px 0px black;
 
   .content {
     width: 100%;
     height: 100%;
     position: absolute;
     color: white;
-    z-index: 1;
   }
 
   .middle {

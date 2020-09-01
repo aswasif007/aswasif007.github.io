@@ -29,7 +29,6 @@ export default {
   font-family: 'Rakkas';
   line-height: 72px;
   margin: 20px 40px;
-  text-shadow: 0 0 10px black;
   color: $extra-light-green;
 
   .fullname {

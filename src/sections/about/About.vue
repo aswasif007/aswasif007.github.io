@@ -89,6 +89,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     background: rgba($color: $extra-dark-red, $alpha: 0.8);
+    text-shadow: none;
   }
 
   .sections {

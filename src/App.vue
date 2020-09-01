@@ -15,14 +15,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import 'src/_variables.scss';
 
 #app {
   height: 100vh;
   width: 100%;
   position: absolute;
   overflow: hidden;
-  background-color: #433;
+  background-color: $eclipse-red;
 }
 
 * {
