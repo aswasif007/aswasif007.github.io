@@ -53,8 +53,8 @@ export default {
         { title: 'C++, Python, Javascript' },
         { title: 'React, Vue, Express, Node, Electron' },
         { title: 'MySQL, MongoDB, ElasticSearch' },
-        { title: 'AWS, Jenkins, Ansible', titleComment: 'Fav Tools ;)' },
-        { title: 'VSCode, Figma' },
+        { title: 'AWS, Jenkins, Ansible' },
+        { title: 'VSCode, Figma', titleComment: 'Fav Tools ;)' },
         { title: 'Linux, Git' },
       ];
     },
