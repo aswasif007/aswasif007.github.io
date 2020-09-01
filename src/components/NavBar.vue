@@ -79,7 +79,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     transform: translateX(100%);
-    transition: transform 0.7s;
+    opacity: 0;
+    transition: all 0.7s ease;
 
     span {
       display: block;
@@ -97,6 +98,7 @@ export default {
     cursor: pointer;
     .dropdown {
       transform: translateX(0%);
+      opacity: 1;
     }
   }
 }
