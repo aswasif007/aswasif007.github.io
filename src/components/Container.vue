@@ -60,6 +60,9 @@ export default {
     },
     setAnimation() {
       this.animate[this.page] = true;
+    },
+    goToPage(pageIdx) {
+      this.scrollCount = this.scrollCount - (this.scrollCount % pages.length) + pageIdx;
     }
   },
   computed: {
@@ -75,6 +78,11 @@ export default {
         transform: `translateZ(-68.8vh) rotateX(${this.scrollCount * 72}deg)`
       };
     }
+  },
+  provide() {
+    return {
+      goToPage: this.goToPage,
+    };
   },
   components: {
     Home,

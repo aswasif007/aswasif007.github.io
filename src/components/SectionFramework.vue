@@ -38,6 +38,12 @@ export default {
     color: white;
   }
 
+  .top {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
   .middle {
     position: absolute;
     top: 0;

@@ -90,6 +90,7 @@ export default {
     justify-content: center;
     background: rgba($color: $extra-dark-red, $alpha: 0.8);
     text-shadow: none;
+    z-index: 2;
   }
 
   .sections {
