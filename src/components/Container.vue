@@ -63,6 +63,7 @@ export default {
     },
     goToPage(pageIdx) {
       this.scrollCount = this.scrollCount - (this.scrollCount % pages.length) + pageIdx;
+      this.setAnimation();
     }
   },
   computed: {
