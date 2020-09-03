@@ -8,9 +8,20 @@
         <div class="body">
           <div class="skills">
             <div class="sections">
-              <bio label="Experience" :entries="experience" />
-              <bio label="Skills" :entries="skills" />
-              <bio label="Education" :entries="education" />
+              <span v-for="skill in skills" :key="skill" class="pill">
+                {{ skill }}
+              </span>
+              <p>
+                I am a passionate and self-motivated professional with years of hands-on
+                experience using React, Django and Flask to create and implement various
+                software applications.
+              </p>
+              <p>  
+                I enjoy being challenged and engaging with projects that require
+                me to work outside my comfort zone and help me expand my knowledge
+                base.
+              </p>
+              <p>Checkout my full resume <a href="/static/resume.pdf" target="blank">here</a>.</p>
             </div>
           </div>
           <div class="intro">
@@ -31,36 +42,22 @@
 <script>
 import NavBar from '~src/components/NavBar.vue';
 import SectionFramework from '~src/components/SectionFramework.vue';
-import Bio from './Bio.vue';
 
 export default {
   components: {
     NavBar,
     SectionFramework,
-    Bio,
   },
   props: {
     animate: { type: Boolean, default: false },
   },
   computed: {
-    experience() {
-      return [
-        { title: 'NewsCred Inc.', titleComment: '2017 - Present', subtitle: 'Fullstack Software Engineer' },
-      ];
-    },
     skills() {
       return [
-        { title: 'C++, Python, Javascript' },
-        { title: 'React, Vue, Express, Node, Electron' },
-        { title: 'MySQL, MongoDB, ElasticSearch' },
-        { title: 'AWS, Jenkins, Ansible' },
-        { title: 'VSCode, Figma', titleComment: 'Fav Tools ;)' },
-        { title: 'Linux, Git' },
-      ];
-    },
-    education() {
-      return [
-        { title: 'Bangladesh University of Eng. & Tech.', subtitle: 'BSc in CSE', subtitleComment: '2013 - 2017' },
+        'C++', 'Python', 'Javascript', 'Django', 'Flask',
+        'Express', 'Node', 'React', 'Vue', 'Electron',
+        'MySQL', 'MongoDB', 'ElasticSearch',
+        'AWS', 'Jenkins', 'Ansible'
       ];
     }
   }
@@ -83,19 +80,49 @@ export default {
     width: 0%;
     height: calc(100% - 2px);
     text-align: left;
-    font-size: calc(var(--bio-font) * var(--ss-ratio));
-    font-family: 'Ubuntu Mono';
+    font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)));
+    font-family: 'PT Serif';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba($color: $extra-dark-red, $alpha: 0.8);
+    background: rgba($color: $coppar-crayola, $alpha: 0.95);
+    color: $eerie-black;
+    text-shadow: 0px 1px 0 $capuut-mortuum;
     z-index: 2;
+    text-align: justify;
+    padding: calc(40px * var(--ss-ratio));
+
+    p {
+      margin-top: 16px;
+
+      span {
+        font-weight: 600;
+      }
+      
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $eerie-black;
+      }
+    }
+  }
+
+  .pill {
+    background: $eerie-black;
+    font-family: 'Ubuntu Mono';
+    font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)) - 2px);
+    display: inline-block;
+    padding: 4px 8px;
+    color: $tea-green;
+    border-radius: 3px;
+    margin: 4px;
   }
 
   .sections {
     max-height: calc(100% - 200px);
     overflow: auto;
     opacity: 0;
+    
   }
 
   .intro {
