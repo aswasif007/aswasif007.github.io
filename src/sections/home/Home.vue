@@ -57,12 +57,12 @@ export default {
   }
 
   .subtitle {
-    font-size: var(--home-tagline-font);
+    font-size: calc(var(--home-tagline-font) * var(--ss-ratio));
     font-family: 'Quintessential';
   }
 
   .profession {
-    font-size: var(--home-profession-font);
+    font-size: calc(var(--home-profession-font) * var(--ss-ratio));
     color: $pink;
     font-family: 'Rakkas';
     line-height: 120%;
@@ -70,7 +70,7 @@ export default {
 
   .tagline {
     opacity: 0;
-    font-size: var(--home-tagline-font);
+    font-size: calc(var(--home-tagline-font) * var(--ss-ratio));
     display: block;
     text-align: center;
   }

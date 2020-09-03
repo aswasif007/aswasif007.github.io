@@ -83,7 +83,7 @@ export default {
     width: 0%;
     height: calc(100% - 2px);
     text-align: left;
-    font-size: var(--bio-font);
+    font-size: calc(var(--bio-font) * var(--ss-ratio));
     font-family: 'Ubuntu Mono';
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ export default {
   .intro {
     position: relative;
     text-align: center;
-    font-size: var(--intro-font-big);
+    font-size: calc(var(--intro-font-big) * var(--ss-ratio));
     width: 100%;
     height: 100%;
     display: flex;
@@ -127,7 +127,7 @@ export default {
   }
 
   .scroll-to-see {
-    font-size: var(--intro-subtitle-font);
+    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
     color: $light-pink;
     opacity: 0;
   }
@@ -173,12 +173,12 @@ export default {
 @keyframes shrink-width {
   from {
     width: 100%;
-    font-size: var(--intro-font-big);
+    font-size: calc(var(--intro-font-big) * var(--ss-ratio));
   }
 
   to {
     width: 50%;
-    font-size: var(--intro-font-small);
+    font-size: calc(var(--intro-font-small) * var(--ss-ratio));
   }
 }
 </style>

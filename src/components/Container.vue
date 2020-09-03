@@ -99,7 +99,7 @@ export default {
 .container {
   width: 100%;
   height: 100vh;
-  perspective: 300vh;
+  perspective: calc(300vh * var(--ss-ratio));
 }
 
 .polygon3d {

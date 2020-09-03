@@ -40,7 +40,7 @@ export default {
   position: relative;
 
   .title {
-    font-size: var(--topbar-font);
+    font-size: calc(var(--topbar-font) * var(--ss-ratio));
     opacity: 0;
   }
 
@@ -60,7 +60,7 @@ export default {
       text-align: center;
       justify-content: center;
       flex-direction: column;
-      margin: 20px 10px;
+      margin: calc(20px * var(--ss-ratio)) calc(10px * var(--ss-ratio));
       background: rgba($color: #c4c4c4, $alpha: 0.5);
     }
   }

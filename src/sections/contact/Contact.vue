@@ -45,7 +45,7 @@ export default {
   position: relative;
 
   .title {
-    font-size: var(--topbar-font);
+    font-size: calc(var(--topbar-font) * var(--ss-ratio));
     opacity: 0;
   }
 
@@ -58,15 +58,15 @@ export default {
 
     a {
       transform: scale(0);
-      width: 60px;
-      height: 60px;
-      border: 6px solid $pink;
+      width: calc(60px * var(--ss-ratio));
+      height: calc(60px * var(--ss-ratio));
+      border: calc(6px * var(--ss-ratio)) solid $pink;
       display: flex;
       text-align: center;
       justify-content: center;
       flex-direction: column;
-      margin: 20px 10px;
-      font-size: 28px;
+      margin: calc(20px * var(--ss-ratio)) calc(10px * var(--ss-ratio));
+      font-size: calc(28px * var(--ss-ratio));;
       font-weight: bolder;
       color: $pink;
       text-decoration: none;
@@ -82,7 +82,7 @@ export default {
   }
 
   .goodbye {
-    font-size: 36px;
+    font-size: calc(36px * var(--ss-ratio));;
     text-align: center;
   }
 }

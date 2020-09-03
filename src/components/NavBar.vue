@@ -35,10 +35,10 @@ export default {
 @import 'src/_variables.scss';
 
 .nav-bar {
-  font-size: var(--topbar-font);
+  font-size: calc(var(--topbar-font) * var(--ss-ratio));
   font-family: 'Rakkas';
-  line-height: 72px;
-  margin: 20px 40px;
+  line-height: calc(72px * var(--ss-ratio));
+  margin: calc(20px * var(--ss-ratio)) calc(40px * var(--ss-ratio));
   color: $extra-light-green;
 
   .fullname {
@@ -53,14 +53,14 @@ export default {
     }
 
     .menu-icon {
-      margin-bottom: -6px;
+      margin-bottom: calc(-6px * var(--ss-ratio));
       margin-left: 16px;
       z-index: 2;
 
       img {
         display: block;
-        height: var(--nav-icon-width);
-        width: var(--nav-icon-width);
+        height: calc(var(--nav-icon-width) * var(--ss-ratio));
+        width: calc(var(--nav-icon-width) * var(--ss-ratio));
       }
     }
   }
@@ -73,7 +73,7 @@ export default {
     right: 0;
     top: 0;
     height: 100%;
-    padding: 40px;
+    padding: calc(40px * var(--ss-ratio));
     z-index: 100;
     display: flex;
     flex-direction: column;

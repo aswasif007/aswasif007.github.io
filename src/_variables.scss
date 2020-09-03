@@ -8,15 +8,26 @@ $extra-light-green: #4FFFEA;
 $ash: #212a33;
 $eclipse-red: #433;
 
+body {
+  --topbar-font: 48px;
+  --bio-font: 28px;
+  --intro-font-big: 48px;
+  --intro-font-small: 36px;
+  --intro-subtitle-font: 20px;
+  --home-profession-font: 80px;
+  --home-tagline-font: 30px;
+  --nav-icon-width: 40px;
+  --ss-ratio: 0.5;
+}
+
 @media only screen and (min-width: 600px) {
   body {
-    --topbar-font: 48px;
-    --bio-font: 28px;
-    --intro-font-big: 48px;
-    --intro-font-small: 36px;
-    --intro-subtitle-font: 20px;
-    --home-profession-font: 80px;
-    --home-tagline-font: 30px;
-    --nav-icon-width: 40px;
+    --ss-ratio: 0.75;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    --ss-ratio: 1;
   }
 }

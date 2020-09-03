@@ -60,7 +60,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 32px;
+    padding: calc(32px * var(--ss-ratio));
     font-family: 'Rakkas';
   }
 }

@@ -35,8 +35,8 @@ export default {
 @import "src/_variables.scss";
 
 .bio {
-  margin-left: 44px;
-  padding: 32px;
+  margin-left: calc(44px * var(--ss-ratio));
+  padding: calc(32px * var(--ss-ratio));
 
   .header {
     color: $pink;
