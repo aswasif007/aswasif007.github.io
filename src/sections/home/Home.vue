@@ -57,12 +57,12 @@ export default {
   }
 
   .subtitle {
-    font-size: $home-tagline-font;
+    font-size: var(--home-tagline-font);
     font-family: 'Quintessential';
   }
 
   .profession {
-    font-size: $home-profession-font;
+    font-size: var(--home-profession-font);
     color: $pink;
     font-family: 'Rakkas';
     line-height: 120%;
@@ -70,7 +70,7 @@ export default {
 
   .tagline {
     opacity: 0;
-    font-size: $home-tagline-font;
+    font-size: var(--home-tagline-font);
     display: block;
     text-align: center;
   }

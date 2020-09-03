@@ -83,7 +83,7 @@ export default {
     width: 0%;
     height: calc(100% - 2px);
     text-align: left;
-    font-size: $bio-font;
+    font-size: var(--bio-font);
     font-family: 'Ubuntu Mono';
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ export default {
   .intro {
     position: relative;
     text-align: center;
-    font-size: $intro-font-big;
+    font-size: var(--intro-font-big);
     width: 100%;
     height: 100%;
     display: flex;
@@ -127,7 +127,7 @@ export default {
   }
 
   .scroll-to-see {
-    font-size: $intro-subtitle-font;
+    font-size: var(--intro-subtitle-font);
     color: $light-pink;
     opacity: 0;
   }
@@ -173,12 +173,12 @@ export default {
 @keyframes shrink-width {
   from {
     width: 100%;
-    font-size: $intro-font-big;
+    font-size: var(--intro-font-big);
   }
 
   to {
     width: 50%;
-    font-size: $intro-font-small;
+    font-size: var(--intro-font-small);
   }
 }
 </style>

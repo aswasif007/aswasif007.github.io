@@ -35,7 +35,7 @@ export default {
 @import 'src/_variables.scss';
 
 .nav-bar {
-  font-size: $topbar-font;
+  font-size: var(--topbar-font);
   font-family: 'Rakkas';
   line-height: 72px;
   margin: 20px 40px;
@@ -59,15 +59,15 @@ export default {
 
       img {
         display: block;
-        height: 40px;
-        width: 40px;
+        height: var(--nav-icon-width);
+        width: var(--nav-icon-width);
       }
     }
   }
 
   .dropdown {
     position: fixed;
-    font-size: $bio-font;
+    font-size: var(--bio-font);
     color: $faded-red;
     background: rgba($color: $extra-dark-red, $alpha: 0.8);
     right: 0;

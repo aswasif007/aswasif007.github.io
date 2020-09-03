@@ -45,7 +45,7 @@ export default {
   position: relative;
 
   .title {
-    font-size: $topbar-font;
+    font-size: var(--topbar-font);
     opacity: 0;
   }
 
