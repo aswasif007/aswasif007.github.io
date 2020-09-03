@@ -39,7 +39,7 @@ export default {
   font-family: 'Rakkas';
   line-height: calc(72px * var(--ss-ratio));
   margin: calc(20px * var(--ss-ratio)) calc(40px * var(--ss-ratio));
-  color: $extra-light-green;
+  color: $tea-green;
 
   .fullname {
     display: inline-block;
@@ -68,8 +68,8 @@ export default {
   .dropdown {
     position: fixed;
     font-size: var(--bio-font);
-    color: $faded-red;
-    background: rgba($color: $extra-dark-red, $alpha: 0.8);
+    color: $tea-green;
+    background: rgba($color: $capuut-mortuum, $alpha: 0.95);
     right: 0;
     top: 0;
     height: 100%;
@@ -88,7 +88,7 @@ export default {
       text-align: right;
 
       &:hover {
-        color: $extra-light-green;
+        color: $opal;
         cursor: pointer;
       }
     }

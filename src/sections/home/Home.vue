@@ -59,16 +59,19 @@ export default {
   .subtitle {
     font-size: calc(var(--home-tagline-font) * var(--ss-ratio));
     font-family: 'Quintessential';
+    color: rgba($color: $capuut-mortuum, $alpha: 0.5);
+    text-shadow: 1px 1px 0 rgba($color: $coppar-crayola, $alpha: 0.8);
   }
 
   .profession {
     font-size: calc(var(--home-profession-font) * var(--ss-ratio));
-    color: $pink;
+    color: $coppar-crayola;
     font-family: 'Rakkas';
     line-height: 120%;
   }
 
   .tagline {
+    color: $opal;
     opacity: 0;
     font-size: calc(var(--home-tagline-font) * var(--ss-ratio));
     display: block;

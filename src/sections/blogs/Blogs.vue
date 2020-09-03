@@ -42,6 +42,7 @@ export default {
   .title {
     font-size: calc(var(--topbar-font) * var(--ss-ratio));
     opacity: 0;
+    color: $coppar-crayola;
   }
 
   .thumbnails {
@@ -49,19 +50,18 @@ export default {
     justify-content: center;
     font-size: 17px;
     font-family: 'PT Serif';
-    text-shadow: none;
 
     p {
       transform: scale(0);
       width: 240px;
       height: 180px;
-      border: 2px solid $light-pink;
+      border: 2px solid $coppar-crayola;
       display: flex;
       text-align: center;
       justify-content: center;
       flex-direction: column;
       margin: calc(20px * var(--ss-ratio)) calc(10px * var(--ss-ratio));
-      background: rgba($color: #c4c4c4, $alpha: 0.5);
+      background: rgba($color: $opal, $alpha: 0.4);
     }
   }
 }

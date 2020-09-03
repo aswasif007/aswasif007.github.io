@@ -47,6 +47,7 @@ export default {
   .title {
     font-size: calc(var(--topbar-font) * var(--ss-ratio));
     opacity: 0;
+    color: $coppar-crayola;
   }
 
   .thumbnails {
@@ -54,13 +55,12 @@ export default {
     justify-content: center;
     font-size: 17px;
     font-family: 'PT Serif';
-    text-shadow: none;
 
     a {
       transform: scale(0);
       width: calc(60px * var(--ss-ratio));
       height: calc(60px * var(--ss-ratio));
-      border: calc(6px * var(--ss-ratio)) solid $pink;
+      border: calc(6px * var(--ss-ratio)) solid $capuut-mortuum;
       display: flex;
       text-align: center;
       justify-content: center;
@@ -68,15 +68,15 @@ export default {
       margin: calc(20px * var(--ss-ratio)) calc(10px * var(--ss-ratio));
       font-size: calc(28px * var(--ss-ratio));;
       font-weight: bolder;
-      color: $pink;
+      color: $capuut-mortuum;
       text-decoration: none;
       border-radius: 50%;
       transition-property: color border-color;
       transition-duration: 0.3s;
 
       &:hover {
-        border-color: $extra-light-green;
-        color: $extra-light-green;
+        border-color: $tea-green;
+        color: $opal;
       }
     }
   }
@@ -84,6 +84,7 @@ export default {
   .goodbye {
     font-size: calc(36px * var(--ss-ratio));;
     text-align: center;
+    color: $opal;
   }
 }
 

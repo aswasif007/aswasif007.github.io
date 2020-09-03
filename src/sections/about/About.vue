@@ -89,7 +89,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     background: rgba($color: $extra-dark-red, $alpha: 0.8);
-    text-shadow: none;
     z-index: 2;
   }
 
@@ -115,20 +114,22 @@ export default {
     display: inline-block;
     text-align: center;
     margin: 0 20px;
+    color: $coppar-crayola;
 
     p {
       font-family: 'PT Serif';
       display: inline-block;
 
       span {
-        color: $pink;
+        color: $tea-green;
+        font-weight: 600;
       }
     }
   }
 
   .scroll-to-see {
     font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
-    color: $light-pink;
+    color: rgba($color: $tea-green, $alpha: 0.8);
     opacity: 0;
   }
 }
