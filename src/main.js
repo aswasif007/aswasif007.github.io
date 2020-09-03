@@ -3,6 +3,12 @@
 // This is done with the browser options. For the config, see package.json
 import Vue from 'vue'
 import App from './App.vue'
+import Vue2TouchEvents from 'vue2-touch-events'
+
+Vue.use(Vue2TouchEvents, {
+  disableClick: true,
+  swipeTolerance: 100,
+});
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',

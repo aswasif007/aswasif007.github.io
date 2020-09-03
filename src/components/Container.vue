@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @wheel.prevent="onWheelDebounced">
+  <div class="container" @wheel.prevent="onWheelDebounced" v-touch:swipe.top="onScrollDown" v-touch:swipe.bottom="onScrollUp">
     <div class="polygon3d" :style="polygonStyle">
       <div class="face face_1">
         <home :animate="animate.home" />
