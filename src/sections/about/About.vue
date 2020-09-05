@@ -6,7 +6,7 @@
       </template>
       <template v-slot:middle>
         <div class="body">
-          <div class="skills">
+          <div class="skills" v-touch:swipe="onSwipe" ref="skills">
             <div class="sections">
               <div>
                 <span v-for="skill in skills" :key="skill" class="pill">
@@ -45,12 +45,27 @@ import NavBar from '~src/components/NavBar.vue';
 import SectionFramework from '~src/components/SectionFramework.vue';
 
 export default {
+  created() {
+    this.lastScrollTop = 0;
+  },
   components: {
     NavBar,
     SectionFramework,
   },
   props: {
     animate: { type: Boolean, default: false },
+  },
+  methods: {
+    onSwipe(dir, e) {
+      const el = this.$refs.skills;
+
+      // Stop event if successfully scrolled.
+      if (this.lastScrollTop !== el.scrollTop) {
+        e.stopPropagation();
+      }
+
+      this.lastScrollTop = el.scrollTop;
+    },
   },
   computed: {
     skills() {
