@@ -8,9 +8,11 @@
         <div class="body">
           <div class="skills">
             <div class="sections">
-              <span v-for="skill in skills" :key="skill" class="pill">
-                {{ skill }}
-              </span>
+              <div>
+                <span v-for="skill in skills" :key="skill" class="pill">
+                  {{ skill }}
+                </span>
+              </div>
               <p>
                 I am a passionate and self-motivated professional with years of hands-on
                 experience using React, Django and Flask to create and implement various
@@ -30,7 +32,6 @@
               <p>I am <span>Wasif</span></p><br>
               <p>A full-time geek</p><br>
               <p>And part-time developer</p><br>
-              <p class="scroll-to-see">Scroll to see some of my works!</p>
             </div>
           </div>
         </div>
@@ -72,25 +73,17 @@ export default {
 
   .body {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 2px);
     display: flex;
   }
 
   .skills {
-    width: 0%;
-    height: calc(100% - 2px);
-    text-align: left;
     font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)));
     font-family: 'PT Serif';
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: rgba($color: $coppar-crayola, $alpha: 0.95);
     color: $eerie-black;
-    text-shadow: 0px 1px 0 $capuut-mortuum;
-    z-index: 2;
     text-align: justify;
-    padding: calc(40px * var(--ss-ratio));
+    overflow: auto;
 
     p {
       margin-top: 16px;
@@ -119,18 +112,16 @@ export default {
   }
 
   .sections {
-    max-height: calc(100% - 200px);
-    overflow: auto;
-    opacity: 0;
-    
+    height: calc(100% - 2 * 40px * var(--ss-ratio));
+    margin: calc(40px * var(--ss-ratio));
+    display: flex;
+    flex-direction: column;
   }
 
   .intro {
     position: relative;
     text-align: center;
     font-size: calc(var(--intro-font-big) * var(--ss-ratio));
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,29 +144,23 @@ export default {
       }
     }
   }
-
-  .scroll-to-see {
-    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
-    color: rgba($color: $tea-green, $alpha: 0.8);
-    opacity: 0;
-  }
 }
 
 .animate {
   .skills {
-    animation: grow-width 1s ease;
+    animation: grow 1s ease;
     animation-delay: 2s;
     animation-fill-mode: forwards;
   }
 
   .sections {
-    animation: show-up 0.5s ease;
+    animation: show-up 1s ease;
     animation-delay: 3s;
     animation-fill-mode: forwards;
   }
 
   .intro {
-    animation: shrink-width 1s ease;
+    animation: shrink 1s ease;
     animation-delay: 2s;
     animation-fill-mode: forwards;
   }
@@ -185,28 +170,88 @@ export default {
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
   }
+}
 
-  .scroll-to-see {
-    animation: show-up 0.5s ease;
-    animation-delay: 4s;
-    animation-fill-mode: forwards;
+@media only screen and (min-width: 0) {
+  .body {
+    flex-direction: column-reverse;
   }
-}
 
-@keyframes grow-width {
-  from { width: 0%; }
-  to { width: 50%; }
-}
-
-@keyframes shrink-width {
-  from {
+  .skills {
     width: 100%;
-    font-size: calc(var(--intro-font-big) * var(--ss-ratio));
+    height: 0%;
+    z-index: 0;
   }
 
-  to {
-    width: 50%;
-    font-size: calc(var(--intro-font-small) * var(--ss-ratio));
+  .intro {
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes grow {
+    from { height: 0%; }
+    to { height: 55%; }
+  }
+
+  @keyframes shrink {
+    from {
+      height: 100%;
+      font-size: calc(var(--intro-font-big) * var(--ss-ratio));
+    }
+
+    to {
+      height: 45%;
+      font-size: calc(var(--intro-font-small) * var(--ss-ratio));
+    }
+  }
+
+  @keyframes show-up {
+    from { opacity: 1; }
+    to { opacity: 1; }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .body {
+    flex-direction: row;
+  }
+
+  .skills {
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .sections {
+    opacity: 0;
+    justify-content: center;
+  }
+
+  .intro {
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes grow {
+    from { width: 0%; }
+    to { width: 50%; }
+  }
+
+  @keyframes shrink {
+    from {
+      width: 100%;
+      font-size: calc(var(--intro-font-big) * var(--ss-ratio));
+    }
+
+    to {
+      width: 50%;
+      font-size: calc(var(--intro-font-small) * var(--ss-ratio));
+    }
+  }
+
+  @keyframes show-up {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 }
 </style>
