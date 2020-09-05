@@ -164,19 +164,19 @@ export default {
 .animate {
   .skills {
     animation: grow 1s ease;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
   .sections {
     animation: show-up 1s ease;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
   }
 
   .intro {
     animation: shrink 1s ease;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 

@@ -85,20 +85,16 @@ export default {
       animation: show-up 0.5s ease;
       animation-fill-mode: forwards;
 
-      &:nth-child(1) {
-        animation-delay: 0.5s;
-      }
-
       &:nth-child(2) {
-        animation-delay: 1.5s;
-        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
       }
     }
   }
 
   .tagline {
     animation: show-up 0.5s ease;
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
     animation-fill-mode: forwards;
   }
 }
