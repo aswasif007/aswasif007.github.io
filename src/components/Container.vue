@@ -107,7 +107,7 @@ export default {
   width: 100%;
   transform-style: preserve-3d;
   transform: translateZ(-68.8vh);
-  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-out;
 }
 
 .face {
