@@ -8,30 +8,54 @@
         <div class="body">
           <div class="skills" v-touch:swipe="onSwipe" ref="skills">
             <div class="sections">
-              <div>
-                <span v-for="skill in skills" :key="skill" class="pill">
+              <div class="set">
+                Languages
+              </div>
+              <div class="pills">
+                <span v-for="skill in skills.lg" :key="skill" class="pill">
                   {{ skill }}
                 </span>
               </div>
-              <p>
-                I am a passionate and self-motivated professional with years of hands-on
-                experience using React, Django and Flask to create and implement various
-                software applications.
-              </p>
-              <p>  
-                I enjoy being challenged and engaging with projects that require
-                me to work outside my comfort zone and help me expand my knowledge
-                base.
-              </p>
-              <p>Checkout my full resume <a href="/static/resume.pdf" target="blank">here</a>.</p>
+              <div class="set">
+                UI Design
+              </div>
+              <div class="pills">
+                <span v-for="skill in skills.ui" :key="skill" class="pill">
+                  {{ skill }}
+                </span>
+              </div>
+              <div class="set">
+                Frontend Coding
+              </div>
+              <div class="pills">
+                <span v-for="skill in skills.fe" :key="skill" class="pill">
+                  {{ skill }}
+                </span>
+              </div>
+              <div class="set">
+                Backend Coding
+              </div>
+              <div class="pills">
+                <span v-for="skill in skills.be" :key="skill" class="pill">
+                  {{ skill }}
+                </span>
+              </div>
+              <div class="set">
+                Deployment Techs
+              </div>
+              <div class="pills">
+                <span v-for="skill in skills.dp" :key="skill" class="pill">
+                  {{ skill }}
+                </span>
+              </div>
             </div>
           </div>
           <div class="intro">
             <div class="intro-message">
-              <p>Hi</p><br>
-              <p>I am <span>Wasif</span></p><br>
-              <p>A full-time geek</p><br>
-              <p>And part-time developer</p><br>
+              <p>I'm a</p>
+              <p>Fullstack Developer</p>
+              <p class="line">Fullstack Develo</p><br>
+              <a class="resume" href="../../static/resume.pdf" target="_blank">Full Resume</a>
             </div>
           </div>
         </div>
@@ -69,12 +93,13 @@ export default {
   },
   computed: {
     skills() {
-      return [
-        'C++', 'Python', 'Javascript', 'Django', 'Flask',
-        'Express', 'Node', 'React', 'Vue', 'Electron',
-        'MySQL', 'MongoDB', 'ElasticSearch',
-        'AWS', 'Jenkins', 'Ansible'
-      ];
+      return {
+        lg: ['C++', 'Javascript', 'Python', 'HTML', 'CSS'],
+        ui: ['Figma', 'Gravit', 'AdobeIllustrator'],
+        fe: ['React', 'Vue', 'Electron'],
+        be: ['Django', 'Flask', 'Express', 'Node', 'MySQL', 'Mongo', 'ElasticSearch'],
+        dp: ['AWS', 'Jenkins', 'Ansible', 'Docker'],
+      }
     }
   }
 }
@@ -95,7 +120,7 @@ export default {
   .skills {
     font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)));
     font-family: 'PT Serif';
-    background: rgba($color: $coppar-crayola, $alpha: 0.95);
+    background: rgba($color: $opal, $alpha: 0.75);
     color: $eerie-black;
     text-align: justify;
     overflow: auto;
@@ -115,15 +140,19 @@ export default {
     }
   }
 
-  .pill {
-    background: $eerie-black;
-    font-family: 'Ubuntu Mono';
-    font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)) - 2px);
-    display: inline-block;
-    padding: 4px 8px;
-    color: $tea-green;
-    border-radius: 3px;
-    margin: 4px;
+  .pills {
+    margin: 4px 0 16px 0;
+
+    span {
+      background: $eerie-black;
+      font-family: 'Ubuntu Mono';
+      font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)) - 2px);
+      display: inline-block;
+      padding: 4px 8px;
+      color: $coppar-crayola;
+      border-radius: 3px;
+      margin: 4px;
+    }
   }
 
   .sections {
@@ -131,6 +160,11 @@ export default {
     margin: calc(40px * var(--ss-ratio));
     display: flex;
     flex-direction: column;
+  }
+
+  .set {
+    font-weight: bold;
+    border-bottom: 2px solid $eerie-black;
   }
 
   .intro {
@@ -150,8 +184,7 @@ export default {
     color: $coppar-crayola;
 
     p {
-      font-family: 'PT Serif';
-      display: inline-block;
+      font-family: 'Rakkas';
 
       span {
         color: $tea-green;
@@ -159,24 +192,43 @@ export default {
       }
     }
   }
+
+  .line {
+    display: inline-block;
+    color: transparent;
+    line-height: 0;
+    border-top: 2px solid $capuut-mortuum;
+    opacity: 0;
+  }
+
+  .resume {
+    opacity: 0;
+    font-family: 'PT Serif';
+    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
+    color: $coppar-crayola;
+    text-decoration: none;
+    border: 1px solid $coppar-crayola;
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
 }
 
 .animate {
   .skills {
     animation: grow 1s ease;
-    animation-delay: 1s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
   }
 
-  .sections {
+  .sections, .line, .resume {
     animation: show-up 1s ease;
-    animation-delay: 2s;
+    animation-delay: 2.3s;
     animation-fill-mode: forwards;
   }
 
   .intro {
     animation: shrink 1s ease;
-    animation-delay: 1s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
   }
 
@@ -205,7 +257,7 @@ export default {
 
   @keyframes grow {
     from { height: 0%; }
-    to { height: 55%; }
+    to { height: 60%; }
   }
 
   @keyframes shrink {
@@ -215,7 +267,7 @@ export default {
     }
 
     to {
-      height: 45%;
+      height: 40%;
       font-size: calc(var(--intro-font-small) * var(--ss-ratio));
     }
   }
