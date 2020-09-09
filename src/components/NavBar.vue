@@ -1,8 +1,6 @@
 <template>
   <div class="nav-bar">
-    <p v-if="showName" class="fullname">
-      Sayeed Wasif
-    </p>
+    <img src="../../static/sw.svg" alt="">
     <p class="menu">
       <span>{{ label }}</span>
       <span class="menu-icon">
@@ -41,6 +39,11 @@ export default {
   margin: calc(20px * var(--ss-ratio)) calc(40px * var(--ss-ratio));
   color: $tea-green;
 
+  img {
+    height: calc(var(--nav-icon-width) * var(--ss-ratio));
+    width: calc(var(--nav-icon-width) * var(--ss-ratio));
+  }
+
   .fullname {
     display: inline-block;
   }
@@ -59,8 +62,6 @@ export default {
 
       img {
         display: block;
-        height: calc(var(--nav-icon-width) * var(--ss-ratio));
-        width: calc(var(--nav-icon-width) * var(--ss-ratio));
       }
     }
   }
