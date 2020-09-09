@@ -8,9 +8,15 @@
         <div class="body">
           <p class="title">Wanna reach out?</p>
           <div class="thumbnails">
-            <a href="https://www.facebook.com/aswasif007" target="_blank">f</a>
-            <a href="mailto: aswasif007@gmail.com" :style="{'padding-bottom': '6px'}">g</a>
-            <a href="https://www.linkedin.com/in/aswasif007/" target="_blank">in</a>
+            <a href="https://www.facebook.com/aswasif007" target="_blank">
+              <img src="../../static/facebook.svg" alt="">
+            </a>
+            <a href="mailto: aswasif007@gmail.com">
+              <img src="../../static/gmail.svg" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/aswasif007/" target="_blank">
+              <img src="../../static/linkedin.svg" alt="">
+            </a>
           </div>
         </div>
       </template>
@@ -48,6 +54,7 @@ export default {
     font-size: calc(var(--topbar-font) * var(--ss-ratio));
     opacity: 0;
     color: $coppar-crayola;
+    font-family: 'Rakkas'
   }
 
   .thumbnails {
@@ -58,31 +65,25 @@ export default {
 
     a {
       transform: scale(0);
-      width: calc(60px * var(--ss-ratio));
-      height: calc(60px * var(--ss-ratio));
-      border: calc(6px * var(--ss-ratio)) solid $capuut-mortuum;
       display: flex;
-      text-align: center;
       justify-content: center;
-      flex-direction: column;
       margin: calc(20px * var(--ss-ratio)) calc(10px * var(--ss-ratio));
-      font-size: calc(28px * var(--ss-ratio));;
-      font-weight: bolder;
-      color: $capuut-mortuum;
-      text-decoration: none;
-      border-radius: 50%;
-      transition-property: color border-color;
-      transition-duration: 0.3s;
 
-      &:hover {
-        border-color: $tea-green;
-        color: $opal;
+      img {
+        width: calc(54px * var(--ss-ratio));
+        height: calc(54px * var(--ss-ratio));
+        transition-property: transform;
+        transition-duration: 0.3s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }
 
   .goodbye {
-    font-size: calc(36px * var(--ss-ratio));;
+    font-size: calc(36px * var(--ss-ratio));
     text-align: center;
     color: $opal;
   }
