@@ -1,9 +1,11 @@
 <template>
   <div class="nav-bar">
-    <img src="../../static/sw.svg" alt="">
-    <p class="menu">
-      <span>{{ label }}</span>
-      <span class="menu-icon">
+    <div class="logo">
+      <img src="../../static/sw.svg" alt="">
+    </div>
+    <div class="menu">
+      <div class="label">{{ label }}</div>
+      <div class="menu-icon">
         <img src="../../static/menu.svg" alt="">
         <div class="dropdown">
           <span @click.stop="goToPage(0)">Home</span>
@@ -12,8 +14,8 @@
           <span @click.stop="goToPage(3)">Blogs</span>
           <span @click.stop="goToPage(4)">Contact</span>
         </div>
-      </span>
-    </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,32 +40,27 @@ export default {
   line-height: calc(72px * var(--ss-ratio));
   margin: calc(20px * var(--ss-ratio)) calc(40px * var(--ss-ratio));
   color: $tea-green;
+  display: flex;
+  position: relative;
 
-  img {
-    height: calc(var(--nav-icon-width) * var(--ss-ratio));
-    width: calc(var(--nav-icon-width) * var(--ss-ratio));
-  }
+  .logo, .menu-icon, .label {
+    display: flex;
 
-  .fullname {
-    display: inline-block;
+    img {
+      height: calc(var(--nav-icon-width) * var(--ss-ratio));
+      width: calc(var(--nav-icon-width) * var(--ss-ratio));
+    }
   }
 
   .menu {
-    float: right;
+    display: flex;
+    position: absolute;
+    right: 0;
+  }
 
-    span {
-      display: inline-block;
-    }
-
-    .menu-icon {
-      margin-bottom: calc(-6px * var(--ss-ratio));
-      margin-left: 16px;
-      z-index: 2;
-
-      img {
-        display: block;
-      }
-    }
+  .label {
+    margin-right: calc(20px * var(--ss-ratio));
+    line-height: calc(var(--nav-icon-width) * var(--ss-ratio));
   }
 
   .dropdown {
@@ -89,7 +86,6 @@ export default {
       text-align: right;
 
       &:hover {
-        color: $opal;
         cursor: pointer;
       }
     }
