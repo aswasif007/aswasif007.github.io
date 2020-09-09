@@ -6,13 +6,16 @@
       </template>
       <template v-slot:middle>
         <div class="body">
-          <p class="profession">Software Engineer</p>
-          <p class="subtitle">And beyond!</p>
+          <div>
+            <p class="profession">Sayeed Wasif</p>
+            <p class="line"><span>Sayeed W</span></p>
+            <p class="subtitle">Software Engineer</p>
+          </div>
         </div>
       </template>
       <template v-slot:bottom>
         <p class="tagline">
-          Your Idea + My Magic = Creative Marvel
+          Design &nbsp;&nbsp;&bull;&nbsp;&nbsp; Build &nbsp;&nbsp;&bull;&nbsp;&nbsp; Deploy
         </p>
       </template>
     </section-framework>
@@ -58,9 +61,20 @@ export default {
 
   .subtitle {
     font-size: calc(var(--home-tagline-font) * var(--ss-ratio));
-    font-family: 'Quintessential';
-    color: rgba($color: $capuut-mortuum, $alpha: 0.5);
-    text-shadow: 1px 1px 0 rgba($color: $coppar-crayola, $alpha: 0.8);
+    font-family: 'Rakkas';
+    color: $coppar-crayola;
+  }
+
+  .line {
+    font-size: calc(var(--home-profession-font) * var(--ss-ratio));
+    line-height: 0px;
+    color: transparent;
+    margin: 12px 0;
+
+    span {
+      border-top: 2px solid $capuut-mortuum;
+      display: inline-block;
+    }
   }
 
   .profession {
@@ -84,11 +98,6 @@ export default {
     p {
       animation: show-up 0.5s ease;
       animation-fill-mode: forwards;
-
-      &:nth-child(2) {
-        animation-delay: 0.5s;
-        animation-duration: 0.5s;
-      }
     }
   }
 
