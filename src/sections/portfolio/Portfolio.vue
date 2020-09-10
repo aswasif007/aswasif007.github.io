@@ -11,6 +11,7 @@
           title="pyjs"
           :tags="['Python', 'Node']"
           logoName="pyjs"
+          url='https://github.com/aswasif007/pyjs'
           large
         />
       </div>

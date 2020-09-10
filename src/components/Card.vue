@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <a class="card" :href="url" target="_blank">
     <div class="upper" :class="{ large }">
       <p>{{ title }}</p>
     </div>
@@ -12,7 +12,7 @@
     <div class="logo">
       <img :src="`../../static/${logoName}.svg`" alt="">
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -22,6 +22,7 @@ export default {
     tags: { type: Array },
     logoName: { type: String },
     large: { type: Boolean },
+    url: { type: String },
   }
 }
 </script>
@@ -38,6 +39,7 @@ export default {
   font-size: 20px;
   font-family: 'Sansation';
   transition: transform 0.5s ease;
+  text-decoration: none;
 
   .upper {
     height: calc(50% - 1px);

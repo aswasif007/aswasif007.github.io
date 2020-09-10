@@ -11,11 +11,13 @@
           title="Python in a Node app? Let’s play with Zerorpc!"
           :tags="['Python', 'Node']"
           logoName="pyjs"
+          url='https://medium.com/@aswasif007/python-in-a-node-app-lets-play-with-zerorpc-cf47128b0497'
         />
         <card class="card"
           title="A migration from Apache Solr to ElasticSearch"
           :tags="['Solr', 'ES', 'DataMigration']"
           logoName="solres"
+          url='https://medium.com/@aswasif007/a-migration-from-apache-solr-to-elasticsearch-bf67801dd6e5'
         />
       </div>
     </template>
