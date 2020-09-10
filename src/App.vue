@@ -75,6 +75,11 @@ body, p, div {
   src: url('../static/UbuntuMono-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Sansation';
+  src: url('../static/Sansation-Regular.ttf');
+}
+
 @import 'src/_animations.scss';
 
 </style>
