@@ -144,19 +144,22 @@ export default {
     color: transparent;
     line-height: 0;
     border-top: 2px solid $capuut-mortuum;
-    opacity: 0;
     user-select: none;
   }
 
   .cta {
-    opacity: 0;
     font-family: 'PT Serif';
-    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
+    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio) - 2px);
     color: $coppar-crayola;
     text-decoration: none;
     border: 1px solid $coppar-crayola;
     padding: 4px 8px;
     border-radius: 3px;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .cards {
@@ -177,7 +180,7 @@ export default {
     animation-fill-mode: forwards;
   }
 
-  .showcase, .line, .cta {
+  .showcase {
     animation: show-up 1s ease;
     animation-delay: 2.3s;
     animation-fill-mode: forwards;
