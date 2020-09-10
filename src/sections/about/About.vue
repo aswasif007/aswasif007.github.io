@@ -1,106 +1,58 @@
 <template>
-  <div class="pg-about" :class="{ animate }">
-    <section-framework>
-      <template v-slot:top>
-        <nav-bar label="About me" />
-      </template>
-      <template v-slot:middle>
-        <div class="body">
-          <div class="skills" v-touch:swipe="onSwipe" ref="skills">
-            <div class="sections">
-              <div class="set">
-                Languages
-              </div>
-              <div class="pills">
-                <span v-for="skill in skills.lg" :key="skill" class="pill">
-                  {{ skill }}
-                </span>
-              </div>
-              <div class="set">
-                UI Design
-              </div>
-              <div class="pills">
-                <span v-for="skill in skills.ui" :key="skill" class="pill">
-                  {{ skill }}
-                </span>
-              </div>
-              <div class="set">
-                Frontend Coding
-              </div>
-              <div class="pills">
-                <span v-for="skill in skills.fe" :key="skill" class="pill">
-                  {{ skill }}
-                </span>
-              </div>
-              <div class="set">
-                Backend Coding
-              </div>
-              <div class="pills">
-                <span v-for="skill in skills.be" :key="skill" class="pill">
-                  {{ skill }}
-                </span>
-              </div>
-              <div class="set">
-                Deployment Techs
-              </div>
-              <div class="pills">
-                <span v-for="skill in skills.dp" :key="skill" class="pill">
-                  {{ skill }}
-                </span>
-              </div>
-            </div>
+  <bio-framework
+    class="pg-about"
+    label="About"
+    :animate="animate"
+    :msgFragments="msgFragments"
+    :cta="cta">
+    <template v-slot:showcase>
+      <fragment>
+        <fragment v-for="{ setName, skills } in skillSets" :key="setName">
+          <div class="set">
+            {{ setName }}
           </div>
-          <div class="intro">
-            <div class="intro-message">
-              <p>I'm a</p>
-              <p>Fullstack Developer</p>
-              <p class="line">Fullstack Develo</p><br>
-              <a class="resume" href="../../static/resume.pdf" target="_blank">Full Resume</a>
-            </div>
+          <div class="pills">
+            <span v-for="skill in skills" :key="skill" class="pill">
+              {{ skill }}
+            </span>
           </div>
-        </div>
-      </template>
-    </section-framework>
-  </div>
+        </fragment>
+      </fragment>
+    </template>
+  </bio-framework>
 </template>
 
 <script>
-import NavBar from '~src/components/NavBar.vue';
-import SectionFramework from '~src/components/SectionFramework.vue';
+import BioFramework from '~src/components/BioFramework.vue';
+import Fragment from '~src/components/Fragment';
 
 export default {
-  created() {
-    this.lastScrollTop = 0;
-  },
   components: {
-    NavBar,
-    SectionFramework,
+    BioFramework,
+    Fragment,
   },
   props: {
     animate: { type: Boolean, default: false },
   },
-  methods: {
-    onSwipe(dir, e) {
-      const el = this.$refs.skills;
-
-      // Stop event if successfully scrolled.
-      if (this.lastScrollTop !== el.scrollTop) {
-        e.stopPropagation();
-      }
-
-      this.lastScrollTop = el.scrollTop;
-    },
-  },
   computed: {
-    skills() {
-      return {
-        lg: ['C++', 'Javascript', 'Python', 'HTML', 'CSS'],
-        ui: ['Figma', 'Gravit', 'AdobeIllustrator'],
-        fe: ['React', 'Vue', 'Electron'],
-        be: ['Django', 'Flask', 'Express', 'Node', 'MySQL', 'Mongo', 'ElasticSearch'],
-        dp: ['AWS', 'Jenkins', 'Ansible', 'Docker'],
-      }
-    }
+    skillSets() {
+      return [
+        { setName: 'Languages', skills: ['C++', 'Javascript', 'Python', 'HTML', 'CSS'] },
+        { setName: 'UI Design', skills: ['Figma', 'Gravit', 'AdobeIllustrator']},
+        { setName: 'Frontend Coding', skills: ['React', 'Vue', 'Electron']},
+        { setName: 'Backend Coding', skills: ['Django', 'Flask', 'Express', 'Node', 'MySQL', 'Mongo', 'ElasticSearch']},
+        { setName: 'Deployment Techs', skills: ['AWS', 'Jenkins', 'Ansible', 'Docker']},
+      ];
+    },
+    cta() {
+      return { name: 'Resume', url: '../../static/resume.pdf' };
+    },
+    msgFragments() {
+      return [
+        'I\'m a',
+        'Fullstack Developer',
+      ];
+    },
   }
 }
 </script>
@@ -110,35 +62,6 @@ export default {
 
 .pg-about {
   position: relative;
-
-  .body {
-    height: 100%;
-    width: calc(100% - 2px);
-    display: flex;
-  }
-
-  .skills {
-    font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)));
-    font-family: 'PT Serif';
-    background: rgba($color: $opal, $alpha: 0.75);
-    color: $eerie-black;
-    text-align: justify;
-    overflow: auto;
-
-    p {
-      margin-top: 16px;
-
-      span {
-        font-weight: 600;
-      }
-      
-      a {
-        text-decoration: none;
-        font-weight: bold;
-        color: $eerie-black;
-      }
-    }
-  }
 
   .pills {
     margin: 4px 0 16px 0;
@@ -155,170 +78,9 @@ export default {
     }
   }
 
-  .sections {
-    height: calc(100% - 2 * 40px * var(--ss-ratio));
-    margin: calc(40px * var(--ss-ratio));
-    display: flex;
-    flex-direction: column;
-  }
-
   .set {
     font-weight: bold;
     border-bottom: 2px solid $eerie-black;
-  }
-
-  .intro {
-    position: relative;
-    text-align: center;
-    font-size: calc(var(--intro-font-big) * var(--ss-ratio));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .intro-message {
-    opacity: 0;
-    display: inline-block;
-    text-align: center;
-    margin: 0 20px;
-    color: $coppar-crayola;
-
-    p {
-      font-family: 'Rakkas';
-
-      span {
-        color: $tea-green;
-        font-weight: 600;
-      }
-    }
-  }
-
-  .line {
-    display: inline-block;
-    color: transparent;
-    line-height: 0;
-    border-top: 2px solid $capuut-mortuum;
-    opacity: 0;
-  }
-
-  .resume {
-    opacity: 0;
-    font-family: 'PT Serif';
-    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio));
-    color: $coppar-crayola;
-    text-decoration: none;
-    border: 1px solid $coppar-crayola;
-    padding: 4px 8px;
-    border-radius: 3px;
-  }
-}
-
-.animate {
-  .skills {
-    animation: grow 1s ease;
-    animation-delay: 1.3s;
-    animation-fill-mode: forwards;
-  }
-
-  .sections, .line, .resume {
-    animation: show-up 1s ease;
-    animation-delay: 2.3s;
-    animation-fill-mode: forwards;
-  }
-
-  .intro {
-    animation: shrink 1s ease;
-    animation-delay: 1.3s;
-    animation-fill-mode: forwards;
-  }
-
-  .intro-message {
-    animation: show-up 1s ease;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-  }
-}
-
-@media only screen and (min-width: 0) {
-  .body {
-    flex-direction: column-reverse;
-  }
-
-  .skills {
-    width: 100%;
-    height: 0%;
-    z-index: 0;
-  }
-
-  .intro {
-    width: 100%;
-    height: 100%;
-  }
-
-  @keyframes grow {
-    from { height: 0%; }
-    to { height: 60%; }
-  }
-
-  @keyframes shrink {
-    from {
-      height: 100%;
-      font-size: calc(var(--intro-font-big) * var(--ss-ratio));
-    }
-
-    to {
-      height: 40%;
-      font-size: calc(var(--intro-font-small) * var(--ss-ratio));
-    }
-  }
-
-  @keyframes show-up {
-    from { opacity: 1; }
-    to { opacity: 1; }
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .body {
-    flex-direction: row;
-  }
-
-  .skills {
-    width: 0%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .sections {
-    opacity: 0;
-    justify-content: center;
-  }
-
-  .intro {
-    width: 100%;
-    height: 100%;
-  }
-
-  @keyframes grow {
-    from { width: 0%; }
-    to { width: 50%; }
-  }
-
-  @keyframes shrink {
-    from {
-      width: 100%;
-      font-size: calc(var(--intro-font-big) * var(--ss-ratio));
-    }
-
-    to {
-      width: 50%;
-      font-size: calc(var(--intro-font-small) * var(--ss-ratio));
-    }
-  }
-
-  @keyframes show-up {
-    from { opacity: 0; }
-    to { opacity: 1; }
   }
 }
 </style>
