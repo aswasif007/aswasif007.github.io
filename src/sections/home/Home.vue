@@ -74,6 +74,7 @@ export default {
     span {
       border-top: 2px solid $capuut-mortuum;
       display: inline-block;
+      user-select: none;
     }
   }
 
