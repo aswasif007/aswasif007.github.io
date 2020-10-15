@@ -45,7 +45,7 @@ export default {
       ];
     },
     cta() {
-      return { name: 'Resume', url: '../../static/resume.pdf' };
+      return { name: 'Resume', url: '../../static/resume.pdf', logo: 'resume' };
     },
     msgFragments() {
       return [

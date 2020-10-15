@@ -15,7 +15,12 @@
             <div class="intro-message">
               <p v-for="frag in msgFragments" :key="frag">{{ frag }}</p>
               <p class="line">{{ fakeText }}</p><br>
-              <a class="cta" :href="cta.url" target="_blank">{{ cta.name }}</a>
+              <a class="cta" :href="cta.url" target="_blank">
+                <span>
+                  <img :src="`../../static/${cta.logo}.svg`" alt="">
+                </span>
+                <span>{{ cta.name }}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -27,7 +32,6 @@
 <script>
 import NavBar from './NavBar.vue';
 import SectionFramework from './SectionFramework.vue';
-import Card from './Card.vue';
 import _ from 'lodash';
 
 export default {
@@ -37,7 +41,6 @@ export default {
   components: {
     NavBar,
     SectionFramework,
-    Card,
   },
   props: {
     animate: { type: Boolean, default: false },
@@ -149,27 +152,31 @@ export default {
 
   .cta {
     font-family: 'PT Serif';
-    font-size: calc(var(--intro-subtitle-font) * var(--ss-ratio) - 2px);
+    font-size: calc(var(--intro-subtitle-font) * max(0.7, var(--ss-ratio)) - 2px);
     color: $coppar-crayola;
     text-decoration: none;
     border: 1px solid $coppar-crayola;
-    padding: 4px 8px;
+    padding: calc(max(0.6, var(--ss-ratio)) * 4px) calc(max(0.6, var(--ss-ratio)) * 8px);
     border-radius: 3px;
     transition: transform 0.5s ease;
+    display: inline-flex;
 
     &:hover {
       transform: scale(1.1);
     }
-  }
 
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    span {
+      height: calc(max(0.6, var(--ss-ratio)) * 28px);
+      margin-top: 2px;
+    }
 
-  .card {
-    margin: 8px;
+    img {
+      width: calc(max(0.6, var(--ss-ratio)) * 24px);
+      height: calc(max(0.6, var(--ss-ratio)) * 24px);
+      margin-right: calc(max(0.6, var(--ss-ratio)) * 8px);
+    }
+
+    
   }
 }
 

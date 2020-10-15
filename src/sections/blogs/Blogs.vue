@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     cta() {
-      return { name: 'Medium', url: 'https://medium.com/@aswasif007' };
+      return { name: 'Medium', url: 'https://medium.com/@aswasif007', logo: 'medium' };
     },
     msgFragments() {
       return [

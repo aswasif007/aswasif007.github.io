@@ -52,7 +52,7 @@ export default {
   },
   computed: {
     cta() {
-      return { name: 'Github', url: 'https://github.com/aswasif007?tab=repositories' };
+      return { name: 'Github', url: 'https://github.com/aswasif007?tab=repositories', logo: 'github' };
     },
     msgFragments() {
       return [
