@@ -67,20 +67,21 @@ export default {
     margin: 4px 0 16px 0;
 
     span {
-      background: $eerie-black;
+      background: $coppar-crayola;
       font-family: 'Ubuntu Mono';
       font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)) - 2px);
       display: inline-block;
       padding: 4px 8px;
-      color: $coppar-crayola;
       border-radius: 3px;
       margin: 4px;
+      font-weight: bold;
     }
   }
 
   .set {
+    color: $coppar-crayola;
     font-weight: bold;
-    border-bottom: 2px solid $eerie-black;
+    border-bottom: 1px solid $coppar-crayola;
   }
 }
 </style>

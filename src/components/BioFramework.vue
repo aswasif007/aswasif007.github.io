@@ -81,7 +81,7 @@ export default {
   .skills {
     font-size: calc(var(--cover-letter-font) * max(0.7, var(--ss-ratio)));
     font-family: 'PT Serif';
-    background: rgba($color: $opal, $alpha: 0.75);
+    background: rgba($color: $opal, $alpha: 0.02);
     color: $eerie-black;
     text-align: justify;
     overflow: auto;
