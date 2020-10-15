@@ -7,9 +7,13 @@
     :cta="cta">
     <template v-slot:showcase>
       <fragment>
-        <fragment v-for="{ title, summary } in blogs" :key="title">
+        <fragment v-for="{ title, summary, link } in blogs" :key="title">
           <div class="title">
             {{ title }}
+            &nbsp;
+            <a class="link-icon" :href="link" target="_blank">
+              <img src="../../../static/link.svg" alt="">
+            </a>
           </div>
           <div class="summary">
             {{ summary }}
@@ -63,10 +67,12 @@ export default {
         {
           title: 'Python in a Node app? Let’s play with Zerorpc!',
           summary: 'An experiment with python, node and zerorpc on cross-language application development.',
+          link: 'https://medium.com/@aswasif007/python-in-a-node-app-lets-play-with-zerorpc-cf47128b0497',
         },
         {
           title: 'A migration from Apache Solr to ElasticSearch',
           summary: 'Story of a large-scale data migration that I participated in as an enterprise software engineer.',
+          link: 'https://medium.com/@aswasif007/a-migration-from-apache-solr-to-elasticsearch-bf67801dd6e5',
         }
       ];
     }
@@ -98,6 +104,22 @@ export default {
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  .link-icon {
+    display: inline-block;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+
+    img {
+      height: calc(max(0.7, var(--ss-ratio)) * 20px);
+      width: calc(max(0.7, var(--ss-ratio)) * 20px);
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
     }
   }
 }
