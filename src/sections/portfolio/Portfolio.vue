@@ -71,12 +71,12 @@ export default {
         {
           title: 'Pi Academy Web',
           description: 'Pi Academy is an academic management system for institutions. This is its web app, which is built as a PWA with Vue. Checkout the demo.',
-          logo: '../../../static/pyjs.svg',
+          logo: '../../../static/pi-academy.svg',
         },
         {
           title: 'Pi Academy API',
           description: 'This is a RESTful api that encapsulates the data architecture of Pi Academy. Checkout the documentation.',
-          logo: '../../../static/pyjs.svg',
+          logo: '../../../static/pi-academy.svg',
         }
       ]
     }
