@@ -40,7 +40,7 @@ export default {
         { setName: 'Languages', skills: ['C++', 'Javascript', 'Python', 'HTML', 'CSS'] },
         { setName: 'UI Design', skills: ['Figma', 'Gravit', 'AdobeIllustrator']},
         { setName: 'Frontend Coding', skills: ['React', 'Vue', 'Electron']},
-        { setName: 'Backend Coding', skills: ['Django', 'Flask', 'Express', 'Node', 'MySQL', 'Mongo', 'ElasticSearch']},
+        { setName: 'Backend Coding', skills: ['Django', 'Flask', 'FastAPI', 'Express', 'Node', 'MySQL', 'PostgreSQL', 'Mongo', 'ElasticSearch']},
         { setName: 'Deployment Techs', skills: ['AWS', 'Jenkins', 'Ansible', 'Docker']},
       ];
     },
