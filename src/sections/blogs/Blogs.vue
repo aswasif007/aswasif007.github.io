@@ -73,6 +73,11 @@ export default {
           title: 'A migration from Apache Solr to ElasticSearch',
           summary: 'Story of a large-scale data migration that I participated in as an enterprise software engineer.',
           link: 'https://medium.com/@aswasif007/a-migration-from-apache-solr-to-elasticsearch-bf67801dd6e5',
+        },
+        {
+          title: 'Fundamental differences between React and Vue',
+          summary: 'A comparative study on how React and Vue work fundamentally.',
+          link: 'https://medium.com/@aswasif007/fundamental-differences-between-react-and-vue-f2969fb54d80',
         }
       ];
     }
